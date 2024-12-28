@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
 import { CardButtonComponent } from "../card-button/card-button.component";
 
+interface IPlano {
+  infos: Infos;
+}
 
+interface Infos {
+  tipo: string;
+  preco: number;
+}
 
 @Component({
   selector: 'app-card',
@@ -10,10 +17,11 @@ import { CardButtonComponent } from "../card-button/card-button.component";
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  plano = {
+  //@ts-ignore
+  plano:IPlano = {
     infos: {
       tipo: 'Simples',
       preco: 100,
-    }
+    } 
   };
 }
