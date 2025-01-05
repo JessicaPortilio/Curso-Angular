@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CardButtonComponent } from "../card-button/card-button.component";
+import { CardButtonCancelComponent } from "../card-button-cancel/card-button-cancel.component";
 
 interface IPlano {
   infos: Infos;
@@ -12,7 +13,7 @@ interface Infos {
 
 @Component({
   selector: 'app-card',
-  imports: [CardButtonComponent],
+  imports: [CardButtonComponent, CardButtonCancelComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })

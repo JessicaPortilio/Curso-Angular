@@ -11,7 +11,7 @@ import { CardRoxoButtonComponent } from '../card-roxo-button/card-roxo-button.co
     CardComponent, // Importando standalone components
     CardButtonComponent,
     CardRoxoComponent,
-    CardRoxoButtonComponent
+    CardRoxoButtonComponent,
   ],
   exports: [
     CardComponent, // Exportando para que outros módulos possam usá-los

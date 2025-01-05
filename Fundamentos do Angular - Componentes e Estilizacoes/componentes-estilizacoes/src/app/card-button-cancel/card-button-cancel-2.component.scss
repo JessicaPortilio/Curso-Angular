@@ -1,0 +1,5 @@
+@import "variables.scss"; //Para usar assim tem que fazer a configuração no arquivo angular.json
+// @import "../../styles.scss"
+.card-cancel-button {
+    background-color: $bgColor;
+}
