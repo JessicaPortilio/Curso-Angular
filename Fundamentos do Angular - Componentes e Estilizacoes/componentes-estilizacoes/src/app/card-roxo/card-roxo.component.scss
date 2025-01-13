@@ -21,3 +21,7 @@
     }
 
 }
+
+:host ::ng-deep .card-cancel-button {
+    background-color: #56d96c !important;
+}

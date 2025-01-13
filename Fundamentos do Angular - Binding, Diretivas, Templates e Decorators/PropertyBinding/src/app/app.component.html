@@ -1,0 +1,23 @@
+<!-- Um campo de texto com propriedades dinâmicas controladas pelo TypeScript -->
+<!-- O valor do campo é definido pela variável inputText -->
+<!-- O tipo do campo (texto ou senha) é controlado pela variável inputType -->
+<!-- Se o campo está habilitado ou desabilitado é controlado pela variável isDisabled -->
+<input id="meu-input" [value]="inputText" [type]="inputType" [disabled]="isDisabled">
+<br>
+
+<!-- Botão para habilitar o campo de texto -->
+<button (click)="enableInput()">Habilitar</button>
+
+<!-- Botão para desabilitar o campo de texto -->
+<button (click)="disableInput()">Desabilitar</button>
+<br>
+
+<!-- Botão para alterar o tipo do campo para "senha" -->
+<button (click)="setPassWordTypeInput()">Senha</button>
+
+<!-- Botão para alterar o tipo do campo para "texto" -->
+<button (click)="setTextTypeInput()">Texto</button>
+<br>
+
+<!-- Botão para exibir o valor atual do campo no console do navegador -->
+<button (click)="logInputText()">Log</button>

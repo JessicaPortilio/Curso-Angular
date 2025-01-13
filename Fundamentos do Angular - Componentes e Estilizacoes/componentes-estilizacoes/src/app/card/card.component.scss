@@ -22,3 +22,16 @@
 
     
 }
+
+// :host ::ng-deep .card-cancel-button {
+//     background-color: yellow !important;
+// }
+
+
+:host ::ng-deep mat-slider .mdc-slider__track--active_fill {
+    border-color: yellowgreen !important;
+}
+
+.global {
+    background-color: yellow;
+}

@@ -5,6 +5,7 @@ import { CardButtonComponent } from '../card-button/card-button.component'; // C
 import { CardRoxoComponent } from '../card-roxo/card-roxo.component'; // Componente standalone
 import { CardRoxoButtonComponent } from '../card-roxo-button/card-roxo-button.component'; // Componente standalone
 
+
 @NgModule({
   imports: [
     CommonModule, // Módulo para usar diretivas como *ngIf, *ngFor, etc.
@@ -12,12 +13,15 @@ import { CardRoxoButtonComponent } from '../card-roxo-button/card-roxo-button.co
     CardButtonComponent,
     CardRoxoComponent,
     CardRoxoButtonComponent,
+    
+    
   ],
   exports: [
     CardComponent, // Exportando para que outros módulos possam usá-los
     //CardButtonComponent,
     CardRoxoComponent,
     //CardRoxoButtonComponent
+    
   ]
 })
 export class CardsModule {}

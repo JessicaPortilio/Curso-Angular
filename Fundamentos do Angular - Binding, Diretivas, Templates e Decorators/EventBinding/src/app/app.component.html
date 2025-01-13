@@ -1,0 +1,24 @@
+<!-- Quando eu uso () em uma propriedade do elemento HTML, eu estou recebendo um valor
+  Quando eu uso [] eu estou enviando um valor para a propriedade.
+-->
+
+<!-- Campo de texto que dispara o evento 'keyup' toda vez que uma tecla é solta -->
+<input type="text" (keyup)="handleInputKeyup($event)">
+
+<!-- Espaçamento entre os dois campos de texto -->
+<br>
+<br>
+
+<!-- Campo de texto que dispara o evento 'input' toda vez que o conteúdo do campo muda -->
+<input type="text" (input)="handleInputEvent($event)">
+
+<br>
+<br>
+
+<!-- Event Binding é frequentemente usado em conjunto com 
+Property Binding para criar interatividade dinâmica. Por exemplo: -->
+
+<input [value]="inputValue" (input)="onInputChange($event)">
+<p>Texto atual: {{ inputValue }}</p>
+
+<!-- O campo de entrada e o parágrafo exibem dinamicamente o texto inserido. -->

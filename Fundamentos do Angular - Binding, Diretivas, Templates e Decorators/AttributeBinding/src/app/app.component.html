@@ -1,0 +1,12 @@
+<!-- Um botão com o atributo 'title' dinâmico, que mostra uma dica quando você passa o mouse -->
+<button [attr.title]="buttonTitle">Teste</button>
+<br>
+<br>
+
+<!-- Um botão que pode ser habilitado ou desabilitado dinamicamente com base na propriedade 'buttonDisabled' -->
+<button [attr.disabled]="buttonDisabled ? true : null">Disabled</button>
+<br>
+<br>
+
+<!-- Um botão que, ao ser clicado, executa a função 'onButtonClic' -->
+<button (click)="onButtonClic()">Mudar Props</button>

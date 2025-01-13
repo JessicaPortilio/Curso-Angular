@@ -1,9 +1,12 @@
+@use "variables.scss" as *; //Para usar assim tem que fazer a configuração no arquivo angular.json
+// @import "../../styles.scss"
+
 .card-cancel-button {
     font-size: 16px;
     text-align: center;
     margin-top: 10px;
     border-radius: 25px;
-    background-color: red;
+    background-color: $bgColor;
     cursor: pointer;
     font-weight: bold;
     padding: 10px
