@@ -1,0 +1,11 @@
+<!-- Este botão está vinculado à classe CSS 'red-button' com base no valor de 'isRedButton' -->
+<!-- Quando clicado, define 'isGreen' como false -->
+<button [class.red-button]="isRedButton" (click)="isGreen = false">Vermelho</button>
+
+<!-- Este botão tem a classe CSS 'green-button' sempre aplicada -->
+<!-- Quando clicado, define 'isGreen' como true -->
+<button [class.green-button]="true" (click)="isGreen = true">Verde</button>
+
+<!-- Este botão alterna entre 'red-button' e 'green-button' com base no valor de 'isGreen' -->
+<!-- A classe 'red-button' é aplicada quando 'isGreen' é false, e 'green-button' quando é true -->
+<button [class]="{'red-button': !isGreen, 'green-button': isGreen}">Objeto</button>

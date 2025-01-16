@@ -1,0 +1,5 @@
+/* Define o layout do container que contém os cartões */
+.cards-container {
+    display: flex; /* Define que os cartões serão alinhados em uma linha */
+    justify-content: space-evenly; /* Espaça os cartões igualmente ao longo do container */
+}

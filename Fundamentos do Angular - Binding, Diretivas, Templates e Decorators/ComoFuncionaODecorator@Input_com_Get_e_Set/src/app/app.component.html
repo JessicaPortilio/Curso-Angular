@@ -1,0 +1,16 @@
+<div class="cards-container">
+    <!-- Renderiza um componente de cartão com tipo e preço configurados dinamicamente -->
+    <app-card [planType]="cardPlanType" [planPrice]="cardPlanPrice"></app-card>
+
+    <!-- Renderiza outro componente de cartão com um estilo ou funcionalidade diferente -->
+    <app-card-roxo></app-card-roxo>
+</div>
+
+<br>
+
+<!-- Campo de entrada onde o usuário pode digitar para alterar o tipo de plano -->
+<input #menuInput type="text" (keyup)="handlePlanType(menuInput.value)" placeholder="Digite o plano">
+
+<!-- Área reservada para exibir componentes das rotas configuradas -->
+<router-outlet></router-outlet>
+

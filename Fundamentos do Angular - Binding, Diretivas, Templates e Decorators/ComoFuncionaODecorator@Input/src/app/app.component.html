@@ -1,0 +1,10 @@
+<div class="cards-container">
+    <!-- Renderiza um cartão com tipo e preço dinâmicos passados como propriedades -->
+    <app-card [planType]="cardPlanType" [planPrice]="cardPlanPrice"></app-card>
+
+    <!-- Renderiza outro tipo de componente de cartão (componente separado) -->
+    <app-card-roxo></app-card-roxo>
+</div>
+
+<!-- Renderiza as rotas definidas no módulo de rotas -->
+<router-outlet></router-outlet>

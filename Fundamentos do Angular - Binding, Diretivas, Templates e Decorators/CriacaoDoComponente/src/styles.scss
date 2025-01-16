@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importa a fonte 'Poppins' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+/* Aplica estilos básicos a todos os elementos */
+* {
+    font-family: "Poppins", serif;  /* Define a fonte padrão para 'Poppins' */
+    background-color: gray;        /* Define a cor de fundo como cinza */
+}
+

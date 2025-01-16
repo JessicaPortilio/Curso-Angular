@@ -1,0 +1,15 @@
+<div class="card">
+    <!-- Mostra o tipo do plano recebido da propriedade 'planType' -->
+    <div class="card__plan card__item">Plano <b>{{ planType }}</b></div>
+    
+    <!-- Mostra o preço do plano recebido da propriedade 'planPrice' -->
+    <div class="card__price card__item">R${{ planPrice }}/Mês</div>
+    
+    <!-- Adiciona o componente de botão dentro do cartão -->
+    <!-- Quando o botão for clicado, o evento 'buttonClick' será tratado no método 'buttonClicked' -->
+    <!-- O botão pode ser desativado ao receber a propriedade 'buttonDisabled' -->
+    <app-card-button 
+        (buttonClick)="buttonClicked($event)" 
+        [buttonDisabled]="true"
+    ></app-card-button>
+</div>

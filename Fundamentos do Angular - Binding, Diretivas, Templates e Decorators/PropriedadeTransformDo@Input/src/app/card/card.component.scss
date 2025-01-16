@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* Estilização do cartão */
+.card {
+    max-width: 350px; /* Define a largura máxima do cartão */
+    background-color: #fd7557; /* Define a cor de fundo do cartão */
+    border-radius: 25px; /* Arredonda os cantos do cartão */
+    padding: 30px; /* Adiciona espaço interno ao redor do conteúdo */
+    font-family: 'Poppins', sans-serif; /* Define a fonte usada no cartão */
+
+    /* Estilização dos itens internos do cartão */
+    &__intem {
+        padding: 10px; /* Adiciona espaço interno aos itens */
+    }
+
+    /* Estilização para o título do plano */
+    &__plan {
+        font-size: 22px; /* Define o tamanho da fonte para o tipo de plano */
+    }
+
+    /* Estilização para o preço do plano */
+    &__price {
+        font-weight: 600; /* Define a espessura da fonte */
+        font-size: 40px; /* Define o tamanho da fonte */
+    }
+}

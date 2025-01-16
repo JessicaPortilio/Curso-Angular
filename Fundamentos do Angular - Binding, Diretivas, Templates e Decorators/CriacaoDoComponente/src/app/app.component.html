@@ -1,0 +1,19 @@
+<!-- Instância do componente de botão -->
+<!-- Define o texto do botão como 'Adquirir' -->
+<!-- Define o estilo do botão como 'purple' -->
+<!-- Desabilita o botão -->
+<!-- Chama o método 'buttonCliked' do componente pai quando clicado -->
+<app-button 
+    [text]="'Adquirir'"
+    [style]="'purple'"
+    [disabled]="true"
+    (clicked)='buttonCliked()'
+></app-button>
+
+<!-- Outra instância do componente de botão -->
+<!-- Define o texto do botão como 'Adquirir2' -->
+<!-- Define o estilo do botão como 'white' -->
+<app-button 
+    [text]="'Adquirir2'"
+    [style]="'white'"
+></app-button>

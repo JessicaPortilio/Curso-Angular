@@ -1,0 +1,16 @@
+<!-- Define um botão com a classe CSS "button" -->
+<!-- /* Adiciona a classe 'button--white' se o estilo do botão for 'white' */ -->
+<!-- /* Adiciona a classe 'button--purple' se o estilo do botão for 'purple' */ -->
+ <!-- /* Chama o método 'onButtonClicked' quando o botão é clicado */-->
+<!-- Desabilita o botão se 'isDisabled' for verdadeiro -->
+<button class="button"
+    [class]="{ 
+    'button--white': buttonStyle === 'white' ? true : false, 
+    'button--purple': buttonStyle === 'purple' ? true : false, 
+    }"
+    (click)="onButtonClicked()"  
+    [disabled]="isDisabled"      
+>
+    {{ buttonText }} <!-- Mostra o texto do botão definido pela propriedade 'buttonText' -->
+</button>
+
