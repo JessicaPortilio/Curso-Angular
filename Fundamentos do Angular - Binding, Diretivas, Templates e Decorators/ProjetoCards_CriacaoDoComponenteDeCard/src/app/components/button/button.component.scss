@@ -1,0 +1,41 @@
+.button {
+    /* Define a largura do botão como 100% do contêiner pai */
+    width: 100%;
+    /* Define o tamanho da fonte do texto dentro do botão */
+    font-size: 16px;
+    /* Centraliza o texto dentro do botão */
+    text-align: center;
+    /* Adiciona um espaço acima do botão */
+    margin-top: 10px;
+    /* Faz as bordas do botão arredondadas */
+    border-radius: 25px;
+    /* Torna o texto dentro do botão mais espesso */
+    font-weight: bold;
+    /* Adiciona um preenchimento interno ao botão (espaço entre o texto e as bordas) */
+    padding: 10px;
+    /* Remove a borda padrão do botão */
+    border: none;
+    /* Muda o cursor para o formato de "mãozinha" ao passar o mouse sobre o botão */
+    cursor: pointer;
+
+    /* Define o posicionamento relativo para que elementos internos possam ser posicionados em relação ao botão */
+    position: relative;
+
+    /* Estilo aplicado quando o botão é pressionado (ativo) */
+    &:active {
+        /* Move o botão visualmente 2px para baixo, criando um efeito de "pressionado" */
+        bottom: -2px;
+    }
+
+    /* Estilo para o botão quando tem a modificação `--white` */
+    &--white {
+        /* Define a cor de fundo do botão como branco */
+        background-color: white;
+    }
+
+    /* Estilo para o botão quando tem a modificação `--purple` */
+    &--purple {
+        /* Define a cor de fundo do botão como roxo */
+        background-color: #a056d9;
+    }
+}

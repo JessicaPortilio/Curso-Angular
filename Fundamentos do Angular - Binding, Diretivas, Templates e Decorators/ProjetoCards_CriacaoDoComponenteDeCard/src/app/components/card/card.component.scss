@@ -1,0 +1,26 @@
+.card {
+    max-width: 350px;            /* Define a largura máxima do cartão */
+    border-radius: 25px;         /* Deixa as bordas arredondadas */
+    padding: 30px;               /* Adiciona um espaço interno em todos os lados */
+
+    &__item {                    /* Estilo genérico para os elementos internos do cartão */
+        padding: 10px;           /* Espaçamento interno em cada item */
+    }
+
+    &__plan {                    /* Estilo específico para o nome do plano */
+        font-size: 22px;         /* Define o tamanho da fonte */
+    }
+
+    &__price {                   /* Estilo específico para o preço */
+        font-weight: 600;        /* Torna o texto mais espesso */
+        font-size: 40px;         /* Aumenta o tamanho da fonte */
+    }
+
+    &--orange {                  /* Estilo para cartões com fundo laranja */
+        background-color: #fd7557; /* Define a cor de fundo laranja */
+    }
+
+    &--purple {                  /* Estilo para cartões com fundo roxo */
+        background-color: #ede1ff; /* Define a cor de fundo roxo */
+    }
+}

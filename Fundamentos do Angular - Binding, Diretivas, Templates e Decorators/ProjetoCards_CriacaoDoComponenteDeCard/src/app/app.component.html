@@ -1,0 +1,45 @@
+<!-- Instância do componente de botão -->
+<!-- Define o texto do botão como 'Adquirir' -->
+<!-- Define o estilo do botão como 'purple' -->
+<!-- Desabilit    a o botão -->
+<!-- Chama o método 'buttonCliked' do componente pai quando clicado -->
+<!-- <app-button 
+    [text]="'Adquirir'"
+    [style]="'white'"
+    [disabled]="true"
+    (clicked)='buttonCliked()'
+></app-button> -->
+
+<!-- Outra instância do componente de botão -->
+<!-- Define o texto do botão como 'Adquirir2' -->
+<!-- Define o estilo do botão como 'white' -->
+<!-- <app-button 
+    [text]="'Adquirir2'"
+    [style]="'purple'"
+></app-button> -->
+
+<div class="cadrs-container">
+    <!-- Cartão do plano Simples -->
+    <!-- Tipo do plano -->
+    <!-- Preço do plano -->
+    <!-- Estilo do cartão -->
+    <!-- Evento emitido ao clicar no botão -->
+    <app-card 
+    [planType]="simplePlan.type"
+    [planPrice]="simplePlan.price"
+    [cardStyle]="simplePlan.style"
+    (buttonClicked)="onCardButtonClicked(simplePlan.type)">
+    </app-card>
+
+    <!-- Cartão do plano Completo -->
+    <!-- Tipo do plano -->
+    <!-- Preço do plano -->
+    <!-- Estilo do cartão -->
+    <!-- Evento emitido ao clicar no botão -->
+    <app-card 
+    [planType]="completePlan.type"
+    [planPrice]="completePlan.price"
+    [cardStyle]="completePlan.style"
+    (buttonClicked)="onCardButtonClicked(completePlan.type)">
+    </app-card>
+</div>
