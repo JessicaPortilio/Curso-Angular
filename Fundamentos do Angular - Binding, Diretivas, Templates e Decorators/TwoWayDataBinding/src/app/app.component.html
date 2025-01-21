@@ -1,0 +1,22 @@
+<!-- <input 
+type="text" 
+[ngModel]="name"  Input 
+(ngModelChange)="handleInputchange($event) Output"> -->
+
+
+<!-- Exibe um título na tela -->
+<h1>Nome</h1>
+
+<!-- Campo de entrada de texto com ligação bidirecional de dados e evento de mudança -->
+<!-- O valor do input está vinculado à variável 'name' através do [(ngModel)] -->
+<!-- Toda vez que o usuário digita algo, o evento (ngModelChange) é disparado e chama a função 'handleInputchange' com o valor atualizado -->
+<!-- Define que o campo é do tipo texto -->
+<!-- Faz a ligação bidirecional com a variável 'name' -->
+<!-- Detecta alterações no valor e chama a função 'handleInputchange' -->
+<input 
+  type="text"              
+  [(ngModel)]="name"      
+  (ngModelChange)="handleInputchange($event)"> 
+
+<!-- Mostra o valor digitado pelo usuário -->
+<h1>Nome digitado: {{name}}</h1>

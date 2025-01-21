@@ -1,0 +1,28 @@
+<!-- Um título H1 que usa a diretiva [ngStyle] para definir estilos dinâmicos.
+Os estilos 'font-size' (tamanho da fonte) e 'color' (cor do texto) são calculados com base nas propriedades do componente -->
+<h1 [ngStyle]="{
+  'font-size': fontSize + 'px',
+  'color': textColor
+}">Sou um H1</h1>
+
+<!-- Um título H1 semelhante ao anterior, mas aqui usamos as diretivas [style.font-size.px] e [style.color] diretamente
+para definir o tamanho da fonte e a cor -->
+<h1 
+[style.font-size.px]="fontSize"
+[style.color]="textColor"
+>Sou um H1 2</h1>
+
+<!-- Um título H1 que recebe os estilos como uma string, definida na propriedade 'stringDoEstilo' no componente -->
+<h1 
+[style]="stringDoEstilo"
+>Sou um H1 3</h1>
+
+<!-- Um título H1 que recebe os estilos como um objeto, definido na propriedade 'objDeEstilo' no componente -->
+<h1 [ngStyle]="objDeEstilo">Sou um H1 4</h1>
+
+<!-- Um botão que, ao ser clicado, chama a função 'aumentarTamanhoDaFonte' no componente, aumentando o tamanho da fonte -->
+<button (click)="aumentarTamanhoDaFonte()">+A</button>
+
+<!-- Um botão que, ao ser clicado, chama a função 'alterarCorDaFonte' no componente, alternando entre as cores branca e laranja.
+O texto do botão também muda dinamicamente -->
+<button (click)="alterarCorDaFonte()">{{buttonText}}</button>

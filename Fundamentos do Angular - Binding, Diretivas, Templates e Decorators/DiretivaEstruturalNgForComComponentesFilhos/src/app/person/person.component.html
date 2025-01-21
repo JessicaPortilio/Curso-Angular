@@ -1,0 +1,19 @@
+<!-- <div>: Um bloco de HTML que representa uma pessoa.
+    class="item": Adiciona a classe base item para estilizar.
+    [class.item--odd]="isOdd": Adiciona a classe item--odd se isOdd for verdadeiro.
+    [class.item--highlighted]="isSelected": Adiciona a classe item--highlighted se isSelected for verdadeiro.
+    (click)="selectPerson()": Dispara o método selectPerson quando o item é clicado. -->
+<!-- Exibe o índice e o nome da pessoa. -->
+<!-- Exibe a idade da pessoa. -->
+<!-- Exibe avisos adicionais se o item for o primeiro ou último na lista. -->
+<div 
+    class="item" 
+    [class.item--odd]="isOdd" 
+    [class.item--highlighted]="isSelected" 
+    (click)="selectPerson()"> 
+
+    <p class="item__name">{{personIndex}} - {{personName}}</p> 
+    <p class="item__age">{{personAge}} anos</p> 
+    <p class="item__age" *ngIf="isFirst">É o primeiro</p> 
+    <p class="item__age" *ngIf="isLast">É o último</p> 
+</div>

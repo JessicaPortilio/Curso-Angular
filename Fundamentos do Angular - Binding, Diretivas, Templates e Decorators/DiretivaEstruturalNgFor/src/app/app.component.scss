@@ -1,0 +1,30 @@
+.list {
+    background-color: black; /* Cor de fundo da lista */
+    padding: 3px; /* Espaçamento ao redor da lista */
+}
+
+.item {
+    padding: 15px; /* Espaçamento interno dos itens */
+    background-color: beige; /* Cor de fundo dos itens */
+    cursor: pointer; /* Muda o cursor para indicar que o item é clicável */
+
+    &__name {
+        font-size: 25px; /* Tamanho da fonte do nome */
+        font-weight: 500; /* Espessura do texto */
+    }
+
+    &__age {
+        font-size: 20px; /* Tamanho da fonte da idade */
+        font-weight: 300; /* Espessura do texto */
+    }
+
+    &--odd {
+        background-color: rgb(82, 82, 82); /* Cor de fundo para itens de índice ímpar */
+    }
+
+    &--highlighted {
+        color: white; /* Cor do texto para o item selecionado */
+        background-color: rgb(60, 229, 54); /* Cor de fundo do item selecionado */
+        border: 3px solid rgb(168, 249, 131); /* Borda ao redor do item selecionado */
+    }
+}

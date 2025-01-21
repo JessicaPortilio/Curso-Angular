@@ -1,0 +1,24 @@
+<!-- *ngFor: Itera pela lista de pessoas.
+[personName]="person.name": Passa o nome para o componente filho.
+[isSelected]="personSelectedIndex === i": Verifica se o índice atual é o selecionado.
+(onPersonSelectEmitt)="selectPerson($event)": Chama selectPerson ao receber o índice clicado do filho. -->
+<div class="list">
+  <app-person 
+  *ngFor="let person of listPessoas; 
+  let i = index;
+  let isFirst = first;
+  let isLast = last;
+  let isOdd = odd; "
+  [personName]="person.name"
+  [personAge]="person.age"
+  [personIndex]="i"
+  [isFirst]="isFirst"
+  [isLast]="isLast"
+  [isOdd]="isOdd"
+  [isSelected]="personSelectedIndex === i"
+  (onPersonSelectEmitt)="selectPerson($event)"
+  ></app-person>
+</div>
+
+
+

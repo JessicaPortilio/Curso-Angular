@@ -1,0 +1,20 @@
+/* Define estilos para o status "ativa" */
+.ativa {
+    color: white;
+    background-color: green;
+}
+
+/* Define estilos para o status "parcial" */
+.parcial {
+    color: white;
+    background-color: orange;
+}
+
+/* Define estilos para o status "bloqueado" */
+.bloqueado {
+    color: white;
+    background-color: red;
+}
+
+// Explicação:
+// As classes ativa, parcial e bloqueado definem as cores de texto e fundo para cada status.

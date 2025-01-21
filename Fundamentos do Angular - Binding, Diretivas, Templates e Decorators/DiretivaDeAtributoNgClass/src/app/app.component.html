@@ -1,0 +1,55 @@
+<!-- Define classes dinamicamente usando um objeto com [ngClass] -->
+<!-- Aplica as classes 'is-big' e 'is-green' se isGreen for verdadeiro -->
+<!-- Aplica a classe 'is-orange' se isGreen for falso -->
+<h1 [ngClass]="{
+  'is-big is-green': isGreen,  
+  'is-orange': !isGreen        
+}">
+  Sou um H1!!!
+</h1>
+
+<!-- Define classes dinamicamente usando [class] e um objeto -->
+<!-- Aplica a classe 'is-green' se isGreen for verdadeiro -->
+<!-- Aplica a classe 'is-orange' se isGreen for falso -->
+<h1 [class]="{
+  'is-green': isGreen,         
+  'is-orange': !isGreen        
+}">
+  Sou um H1 2 !!!
+</h1>
+
+<!-- Botão que define a variável isGreen como verdadeira -->
+<button (click)="definindoComoVerde()">Verde</button>
+
+<!-- Botão que define a variável isGreen como falsa -->
+<button (click)="definindoComoLaranja()">Laranja</button>
+
+<!-- Adiciona classes diretamente como string com ngClass -->
+<h1 [ngClass]="'is-big is-green'">Sou um H1 !!!</h1>
+
+<!-- Adiciona classes diretamente como string com [class] -->
+<h1 [class]="'is-big is-green'">Sou um H1 !!!</h1>
+
+<!-- Adiciona classes usando um array com ngClass -->
+<h1 [ngClass]="['is-big', 'is-green']">Sou um H1 !!!</h1>
+
+<!-- Adiciona classes usando um array com [class] -->
+<h1 [class]="['is-big', 'is-green']">Sou um H1 !!!</h1>
+
+<!-- Adiciona classes dinamicamente usando um objeto com ngClass -->
+<h1 [ngClass]="{'is-green': isGreen, 'is-orange': !isGreen}">Sou um H1 !!!</h1>
+
+<!-- Adiciona classes dinamicamente usando um objeto com [class] -->
+<h1 [class]="{'is-green': isGreen, 'is-orange': !isGreen}">Sou um H1 !!!</h1>
+
+<!-- Demonstração da diferença: ngClass permite agrupar várias classes -->
+<h1 [ngClass]="{'is-big is-green': isGreen, 'is-orange': !isGreen}">Sou um H1</h1>
+
+<!-- Com [class], cada classe precisa ser declarada individualmente -->
+<h1 [class]="{'is-big': isGreen, 'is-green': isGreen, 'is-orange': !isGreen}">Sou um H1</h1>
+
+<!-- Aplica apenas uma classe dinamicamente com ngClass -->
+<h1 [ngClass]="{'is-green': isGreen}">Sou um H1</h1>
+
+<!-- Aplica uma única classe dinamicamente com a sintaxe [class.classe] -->
+<h1 [class.is-green]="isGreen">Sou um H1</h1>

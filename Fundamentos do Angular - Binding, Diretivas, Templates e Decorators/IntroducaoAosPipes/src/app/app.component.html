@@ -1,0 +1,44 @@
+<!-- <h1
+[class]="{
+  'ativa': pessoa.status === 1,
+  'parcial': pessoa.status === 2,
+  'bloqueado': pessoa.status === 3,
+}"
+>{{pessoa.name}}</h1>
+
+<h1
+[class]="{
+  'ativa': pessoa2.status === 1,
+  'parcial': pessoa2.status === 2,
+  'bloqueado': pessoa2.status === 3,
+}"
+>{{pessoa2.name}}</h1>
+
+<h1
+[class]="{
+  'ativa': pessoa3.status === 1,
+  'parcial': pessoa3.status === 2,
+  'bloqueado': pessoa3.status === 3,
+}"
+>{{pessoa3.name}}</h1> -->
+
+
+<!-- Exibe o nome da pessoa e aplica a classe CSS correspondente ao status -->
+<h1
+  [class]="pessoa.status | statusClass" 
+  >{{pessoa.name}}</h1>
+
+<!-- Repete o mesmo processo para a segunda pessoa -->
+<h1
+  [class]="pessoa2.status | statusClass"
+  >{{pessoa2.name}}</h1>
+
+<!-- E para a terceira pessoa -->
+<h1
+  [class]="pessoa3.status | statusClass"
+  >{{pessoa3.name}}</h1>
+
+  <!-- Explicação:
+  [class]: Atribui dinamicamente uma classe CSS ao elemento h1.
+  pessoa.status | statusClass: O valor do status da pessoa é enviado para o pipe statusClass, que retorna o nome da classe CSS correspondente.
+  {{pessoa.name}}: Exibe o nome da pessoa no elemento h1. -->

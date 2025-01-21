@@ -1,0 +1,30 @@
+<!-- let isEven = even -->
+<div class="list">
+  <!-- Itera sobre a lista de pessoas usando *ngFor -->
+  <!-- Adiciona a classe CSS `item--odd` se o índice for ímpar -->
+  <!-- Adiciona a classe CSS `item--highlighted` se o índice atual for o selecionado -->
+  <!-- Dispara o método selectPerson ao clicar no item -->
+  <!-- Exibe o índice e o nome da pessoa -->
+  <!-- Exibe a idade da pessoa -->
+  <!-- Exibe um aviso se for o primeiro item -->
+  <!-- Exibe um aviso se for o último item -->
+  <div 
+    class="item" 
+    *ngFor="
+    let pessoa of listPessoas; 
+    let i = index; 
+    let isOdd = odd; 
+    let isLast = last; 
+    let isFirst = first  "
+    [class.item--odd]="isOdd" 
+    [class.item--highlighted]="personSelectedIndex === i" 
+    (click)="selectPerson(i)"> 
+    <p class="item__name">{{i}} - {{pessoa.name}}</p> 
+    <p class="item__age">{{pessoa.age}} anos</p> 
+    <p class="item__age" *ngIf="isFirst">É o primeiro</p> 
+    <p class="item__age" *ngIf="isLast">É o último</p> 
+  </div>
+</div>
+
+
+

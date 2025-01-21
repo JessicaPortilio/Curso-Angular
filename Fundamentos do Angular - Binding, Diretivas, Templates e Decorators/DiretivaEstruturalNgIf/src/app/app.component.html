@@ -1,0 +1,22 @@
+<!-- <div style="background-color: green;" *ngIf="minhaProp; else meuTemplate">Sou uma div!</div>
+<br>
+<ng-template #meuTemplate>
+  <div style="background-color: red;">Sou uma outra div!</div>
+</ng-template> -->
+
+<!-- ng-container é um contêiner lógico que não é renderizado no DOM. Ele serve para controlar a estrutura com *ngIf -->
+<ng-container *ngIf="minhaProp; then meuTemplate; else meuOutroTemplate"></ng-container>
+
+<!-- ng-template é uma estrutura que define um bloco de HTML reutilizável que será renderizado quando for necessário -->
+<ng-template #meuTemplate>
+  <!-- Div que será exibida quando 'minhaProp' for true -->
+  <div style="background-color: green;">Sou a div "then"!</div>
+</ng-template>
+
+<ng-template #meuOutroTemplate>
+  <!-- Div que será exibida quando 'minhaProp' for false -->
+  <div style="background-color: red;">Sou a div "else"!</div>
+</ng-template>
+
+<!-- Botão que alterna o valor de 'minhaProp' entre true e false -->
+<button (click)="toogleProp()">Toggle</button>
