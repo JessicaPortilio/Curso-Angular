@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+// Comentário indicando que você pode adicionar estilos globais neste arquivo.
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    // Remove margens, preenchimentos e bordas de todos os elementos para padronizar o layout.
+}
+
+html, body { height: 100%; }
+// Define que a altura de `html` e `body` deve ocupar 100% do viewport.
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    // Remove margens do corpo e define uma fonte padrão para todo o texto.
+}
+
+
+
