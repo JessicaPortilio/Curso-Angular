@@ -1,0 +1,28 @@
+// Estrutura HTML para exibir uma lista de usuários utilizando uma tabela do Angular Material.
+<div class="users-list">
+    <!-- Tabela responsável por exibir a lista de usuários -->
+    <table mat-table [dataSource]="userList">
+
+        <!-- Define a coluna de nomes -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nome </th> <!-- Cabeçalho da coluna -->
+            <td mat-cell *matCellDef="let element" class="users-list__item" (click)="onUserSelected(element)"> {{element.nome}} </td> <!-- Nome do usuário -->
+        </ng-container>
+
+        <!-- Define a coluna de data de cadastro -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Data de Cadastro </th> <!-- Cabeçalho da coluna -->
+            <td mat-cell *matCellDef="let element" class="users-list__item" (click)="onUserSelected(element)"> {{element.dataCadastro}} </td> <!-- Data de cadastro do usuário -->
+        </ng-container>
+
+        <!-- Define a coluna de status -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th> <!-- Cabeçalho da coluna -->
+            <td mat-cell *matCellDef="let element" class="users-list__item" (click)="onUserSelected(element)"> {{element.ativo}} </td> <!-- Status do usuário -->
+        </ng-container>
+
+        <!-- Configura as linhas da tabela -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
