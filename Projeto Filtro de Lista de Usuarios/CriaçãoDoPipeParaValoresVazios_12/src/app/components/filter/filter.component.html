@@ -1,0 +1,55 @@
+<div class="filter">
+    <!-- Contêiner principal da área do filtro -->
+    <form class="form">
+        <!-- Formulário para os campos de filtro -->
+        <div class="form__name">
+            <!-- Campo de entrada para o nome -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Nome</mat-label>
+                <!-- Label para o campo "Nome" -->
+                <input matInput placeholder="Fulano da Silva" value="Fulano">
+                <!-- Campo de entrada de texto com um valor padrão "Fulano" -->
+            </mat-form-field>
+        </div>
+        <div class="form__date-picker">
+            <!-- Campo para selecionar um intervalo de datas -->
+            <mat-form-field>
+                <mat-label>Data de Cadastro</mat-label>
+                <!-- Label para o campo de seleção de data -->
+                <mat-date-range-input [rangePicker]="picker">
+                    <!-- Componente para selecionar um intervalo de datas -->
+                    <input matStartDate placeholder="Start date">
+                    <!-- Campo para a data inicial -->
+                    <input matEndDate placeholder="End date">
+                    <!-- Campo para a data final -->
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <!-- Dica sobre o formato esperado para as datas -->
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <!-- Botão que abre o calendário para escolher as datas -->
+                <mat-date-range-picker #picker></mat-date-range-picker>
+                <!-- Componente que exibe o calendário para selecionar as datas -->
+            </mat-form-field>
+        </div>
+        <div class="form__status">
+            <!-- Campo para selecionar o status -->
+            <mat-form-field>
+                <mat-label>Status</mat-label>
+                <!-- Label para o campo "Status" -->
+                <mat-select>
+                    <!-- Dropdown para escolher uma opção de status -->
+                    @for (food of foods; track food) {
+                    <!-- Loop (não funcional em Angular, mas seria usado para gerar opções dinamicamente) -->
+                    <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+                    <!-- Opções dentro do dropdown, com valores e textos associados -->
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form__button">
+            <!-- Botão para acionar ações no formulário -->
+            <button mat-raised-button>Basic</button>
+            <!-- Botão elevado com o texto "Basic" -->
+        </div>
+    </form>
+</div>
