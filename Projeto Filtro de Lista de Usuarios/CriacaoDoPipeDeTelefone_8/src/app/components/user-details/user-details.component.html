@@ -1,0 +1,84 @@
+<div class="user-details">
+    <!-- Contêiner principal para os detalhes do usuário -->
+    
+    <mat-list>
+        <!-- Cria uma lista para organizar os detalhes do usuário -->
+        
+        <mat-list-item class="u-text-align-center">
+            <!-- Um item de lista usado para exibir o título -->
+            <span class="mat-h2">Detalhes do Usuário</span>
+            <!-- Exibe o título principal "Detalhes do Usuário" em formato estilizado -->
+        </mat-list-item>
+        
+        <!-- Adiciona uma linha divisória para separar os itens -->
+        <mat-divider></mat-divider>
+        
+        <!-- Exibe o nome do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Nome: </span>
+            <!-- Texto "Nome:" com estilo -->
+            <span class="mat-h3">{{user.nome}}</span>
+            <!-- Mostra o nome do usuário extraído da propriedade `user.nome` -->
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <!-- Linha divisória abaixo do item -->
+
+        <!-- Exibe o email do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Email: </span>
+            <!-- Texto "Email:" com estilo -->
+            <span class="mat-h3">{{user.email}}</span>
+            <!-- Mostra o email do usuário extraído da propriedade `user.email` -->
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Exibe o telefone do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Telefone: </span>
+            <!-- Texto "Telefone:" com estilo -->
+            <span class="mat-h3">{{user.telefone | phone}}</span>
+            <!-- Mostra o telefone do usuário extraído da propriedade `user.telefone` -->
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Exibe o endereço do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Endereço: </span>
+            <!-- Texto "Endereço:" com estilo -->
+            <span class="mat-h3">
+                {{user.endereco.rua}}, {{user.endereco.numero}}, 
+                {{user.endereco.cidade}} - {{user.endereco.estado}}
+            </span>
+            <!-- Mostra o endereço completo do usuário com base nas propriedades do objeto `user.endereco` -->
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Exibe se o usuário está ativo -->
+        <mat-list-item>
+            <span class="mat-h2">Ativo: </span>
+            <!-- Texto "Ativo:" com estilo -->
+            <span class="mat-h3">{{user.ativo}}</span>
+            <!-- Mostra o estado ativo do usuário, extraído da propriedade `user.ativo` -->
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Exibe a função do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Função: </span>
+            <!-- Texto "Função:" com estilo -->
+            <span class="mat-h3">{{user.funcao}}</span>
+            <!-- Mostra a função do usuário, extraída da propriedade `user.funcao` -->
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Exibe a data de cadastro do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Data de Cadastro: </span>
+            <!-- Texto "Data de Cadastro:" com estilo -->
+            <span class="mat-h3">{{user.dataCadastro}}</span>
+            <!-- Mostra a data de cadastro do usuário, extraída da propriedade `user.dataCadastro` -->
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </mat-list>
+</div>
+<!-- Fim do contêiner que exibe os detalhes do usuário -->
