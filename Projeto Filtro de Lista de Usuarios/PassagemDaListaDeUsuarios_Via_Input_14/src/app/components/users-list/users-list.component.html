@@ -1,0 +1,35 @@
+<!-- Divisão principal que contém a lista de usuários -->
+<div class="users-list">
+    <!-- Tabela Angular Material usada para exibir os dados dos usuários -->
+    <table mat-table [dataSource]="userList">
+
+        <!-- Coluna para exibir os nomes dos usuários -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Nome </th> <!-- Cabeçalho da coluna -->
+            <td mat-cell *matCellDef="let element" class="users-list__item" (click)="onUserSelected(element)"> 
+                {{element.nome | dashIfEmpty}} <!-- Mostra o nome do usuário ou um traço caso esteja vazio -->
+            </td>
+        </ng-container>
+
+        <!-- Coluna para exibir a data de cadastro dos usuários -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Data de Cadastro </th> <!-- Cabeçalho da coluna -->
+            <td mat-cell *matCellDef="let element" class="users-list__item" (click)="onUserSelected(element)"> 
+                {{element.dataCadastro | date:'dd/MM/yyyy' | dashIfEmpty}} <!-- Mostra a data formatada ou um traço se vazio -->
+            </td>
+        </ng-container>
+
+        <!-- Coluna para exibir o status dos usuários -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th> <!-- Cabeçalho da coluna -->
+            <td mat-cell *matCellDef="let element" class="users-list__item" (click)="onUserSelected(element)"> 
+                {{element.ativo | status }} <!-- Mostra o status ativo/inativo -->
+            </td>
+        </ng-container>
+
+        <!-- Define as linhas do cabeçalho da tabela -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <!-- Define as linhas com os dados da tabela -->
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
