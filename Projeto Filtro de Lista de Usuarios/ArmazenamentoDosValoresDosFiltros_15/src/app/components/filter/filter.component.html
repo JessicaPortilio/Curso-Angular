@@ -1,0 +1,59 @@
+<!-- Contêiner principal que encapsula a área do filtro -->
+<div class="filter">
+    <!-- Div que contém o formulário dos filtros -->
+    <div class="form">
+        
+        <!-- Seção do formulário onde o usuário pode inserir o nome -->
+        <div class="form__name">
+            <!-- Componente de campo de formulário do Angular Material, usado para estilização -->
+            <mat-form-field class="example-full-width">
+                <!-- Texto visível acima do campo de entrada (label) -->
+                <mat-label>Nome</mat-label>
+                <!-- Campo de entrada de texto, estilizado com Angular Material, que está ligado a `filterOptions.name` (dados são sincronizados entre a interface e o TypeScript) -->
+                <input matInput placeholder="Fulano da Silva" [(ngModel)]="filterOptions.name">
+            </mat-form-field>
+        </div>
+        <!-- Seção para selecionar um intervalo de datas -->
+        <div class="form__date-picker">
+            <!-- Campo de formulário estilizado para seleção de data -->
+            <mat-form-field>
+                <!-- Texto acima do campo indicando que o usuário deve selecionar um intervalo de datas -->
+                <mat-label>Data de Cadastro</mat-label>
+                <!-- Componente de entrada para um intervalo de datas. Ligado ao seletor de datas (#picker) -->
+                <mat-date-range-input [rangePicker]="picker">
+                    <!-- Campo para selecionar a data inicial do intervalo. Os dados são sincronizados com `filterOptions.startDate` -->
+                    <input matStartDate placeholder="Start date" [(ngModel)]="filterOptions.startDate">
+                    <!-- Campo para selecionar a data final do intervalo. Os dados são sincronizados com `filterOptions.endDate` -->
+                    <input matEndDate placeholder="End date" [(ngModel)]="filterOptions.endDate">
+                </mat-date-range-input>
+                <!-- Texto auxiliar mostrando o formato esperado para as datas -->
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <!-- Ícone que abre o seletor de calendário ao ser clicado -->
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <!-- Componente que exibe um calendário para o usuário selecionar as datas -->
+                <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+        </div>
+        <!-- Seção do formulário para selecionar o status -->
+        <div class="form__status">
+            <!-- Campo de formulário estilizado para seleção de opções -->
+            <mat-form-field>
+                <!-- Texto acima do campo indicando que o usuário deve selecionar um status -->
+                <mat-label>Status</mat-label>
+                <!-- Dropdown para escolher um status, sincronizado com `filterOptions.status` -->
+                <mat-select [(ngModel)]="filterOptions.status">
+                    <!-- Itera sobre a lista de status e cria uma opção para cada item -->
+                    <mat-option *ngFor="let status of statusList" [value]="status.value">
+                        <!-- Mostra a descrição do status como texto da opção -->
+                        {{status.description}}    
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- Seção para o botão de ação -->
+        <div class="form__button">
+            <!-- Botão elevado do Angular Material. Quando clicado, chama a função `onFilter()` no TypeScript -->
+            <button mat-raised-button (click)="onFilter()">Filtrar</button>
+        </div>
+    </div>
+</div>
