@@ -1,0 +1,24 @@
+<div class="container">
+    <!-- Contêiner principal que organiza a estrutura da página -->
+
+    <div class="left-container">
+        <!-- Divisão para a parte esquerda da tela -->
+
+        <div class="top-div">
+            <!-- Componente de filtro que será exibido na parte superior esquerda -->
+            <app-filter></app-filter>
+        </div>
+
+        <div class="main-left-div">
+            <!-- Componente para exibir a lista de usuários -->
+            <app-users-list (userSelected)="onUserSelected($event)"></app-users-list>
+        </div>
+    </div>
+
+    <div class="right-div">
+        <!-- Divisão para a parte direita da tela -->
+
+        <app-user-details [user]="userSelected" *ngIf="showUserDetails"></app-user-details>
+        <!-- Componente para exibir os detalhes do usuário selecionado -->
+    </div>
+</div>
