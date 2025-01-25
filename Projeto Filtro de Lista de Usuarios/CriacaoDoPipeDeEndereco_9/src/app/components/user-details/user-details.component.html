@@ -1,0 +1,70 @@
+<!-- Contêiner principal que organiza os detalhes do usuário -->
+<div class="user-details">
+    <mat-list>
+        <!-- Cria uma lista de elementos estilizados com Material Design -->
+        
+        <!-- Título da seção -->
+        <mat-list-item class="u-text-align-center">
+            <span class="mat-h2">Detalhes do Usuário</span>
+        </mat-list-item>
+        
+        <!-- Linha divisória para separar seções -->
+        <mat-divider></mat-divider>
+        
+        <!-- Nome do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Nome: </span>
+            <!-- Mostra o nome do usuário -->
+            <span class="mat-h3">{{user.nome}}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        
+        <!-- Email do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Email: </span>
+            <!-- Mostra o email do usuário -->
+            <span class="mat-h3">{{user.email}}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Telefone do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Telefone: </span>
+            <!-- Formata o telefone do usuário usando o Pipe personalizado `phone` -->
+            <span class="mat-h3">{{user.telefone | phone}}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Endereço do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Endereço: </span>
+            <!-- Formata o endereço do usuário usando o Pipe personalizado `address` -->
+            <span class="mat-h3">{{user.endereco | address}}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Estado ativo do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Ativo: </span>
+            <!-- Mostra se o usuário está ativo -->
+            <span class="mat-h3">{{user.ativo}}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Função do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Função: </span>
+            <!-- Mostra a função do usuário -->
+            <span class="mat-h3">{{user.funcao}}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <!-- Data de cadastro do usuário -->
+        <mat-list-item>
+            <span class="mat-h2">Data de Cadastro: </span>
+            <!-- Mostra a data de cadastro do usuário -->
+            <span class="mat-h3">{{user.dataCadastro}}</span>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </mat-list>
+</div>
