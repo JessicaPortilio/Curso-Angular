@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;  // Importa os estilos do Angular Material
+
+// Define a configuração tipográfica padrão utilizando a tipografia do Angular Material
+$my-typography: mat.m2-define-typography-config();
+
+// Aplica a hierarquia tipográfica no estilo do componente
+@include mat.typography-hierarchy($my-typography);
+
+// Define o estilo para o texto dentro da tag span, deixando a cor do texto preta
+span {
+    color: black;
+}
+
+// Estilos para a classe 'user-details', definindo seu tamanho
+.user-details {
+    width: 100%;   // Define a largura como 100% do contêiner pai
+    height: 100%;  // Define a altura como 100% do contêiner pai
+}
