@@ -1,0 +1,24 @@
+<div class="container">
+    <!-- Divisão que organiza o layout geral do componente -->
+
+    <div class="left-container">
+        <!-- Área à esquerda da tela -->
+
+        <div class="top-div">
+            <!-- Inclui o componente de filtro para buscar usuários -->
+            <app-filter (onFilter)="onFilter($event)"></app-filter>
+        </div>
+
+        <div class="main-left-div">
+            <!-- Componente que mostra a lista de usuários em formato de tabela -->
+            <app-users-list [userList]="userListFiltered" (userSelected)="onUserSelected($event)"></app-users-list>
+        </div>
+    </div>
+
+    <div class="right-div">
+        <!-- Área à direita da tela -->
+
+        <!-- Exibe os detalhes do usuário selecionado caso o botão seja clicado -->
+        <app-user-details [user]="userSelected" *ngIf="showUserDetails"></app-user-details>
+    </div>
+</div>
