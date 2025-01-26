@@ -69,31 +69,30 @@ export class AppComponent implements OnInit {
     // Inicializa a variável que armazenará os usuários filtrados.
     let filteredList: IUser[] = [];
 
-    // Aplica o filtro por nome chamando uma função dedicada a esse propósito.
-    filteredList = filterUsersListByName(filterOptions.name, userList);
+    // Filtra os usuários pelo nome, chamando uma função dedicada a isso.
+    filteredList = this.filterUsersListByName(filterOptions.name, userList);
 
     // Retorna a lista final de usuários filtrados.
     return filteredList;
   }
-}
+  // Função para filtrar usuários com base no nome.
+  filterUsersListByName(name: string | undefined, userList: IUser[]): IUser[] {
+    // Verifica se nenhum nome foi digitado no campo de busca.
+    const NAME_NOT_TYPED = name === undefined;
 
+    // Se nenhum nome foi digitado, retorna a lista original sem alterações.
+    if (NAME_NOT_TYPED) {
+      return userList;
+    }
 
-// Função externa que aplica o filtro por nome aos usuários.
-function filterUsersListByName(name: string | undefined, userList: IUser[]): IUser[] {
-  // Verifica se nenhum nome foi digitado no campo de busca.
-  const NAME_NOT_TYPED = name === undefined;
+    // Filtra a lista de usuários, mantendo apenas os que contêm o nome buscado (ignora maiúsculas/minúsculas).
+    const filteredList = userList.filter((user) =>
+      user.nome.toLowerCase().includes(name.toLowerCase())
+    );
 
-  // Se nenhum nome foi digitado, retorna a lista completa de usuários, sem filtrar.
-  if (NAME_NOT_TYPED) {
-    return userList;
+    // Retorna a lista filtrada com base no nome.
+    return filteredList;
   }
-
-  // Se um nome foi digitado, filtra a lista de usuários, retornando apenas aqueles cujo nome contém o texto buscado.
-  const filteredList = userList.filter((user) =>
-    user.nome.toLowerCase().includes(name.toLowerCase()) // Converte os nomes para letras minúsculas para fazer uma busca sem diferenciação entre maiúsculas e minúsculas.
-  );
-
-  // Retorna a lista filtrada.
-  return filteredList;
 }
+
 
