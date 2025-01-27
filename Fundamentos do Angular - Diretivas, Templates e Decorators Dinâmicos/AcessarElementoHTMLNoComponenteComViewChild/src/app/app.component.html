@@ -1,0 +1,26 @@
+<!-- Um campo de entrada de texto onde o usuário pode digitar algo. -->
+Meu input: <input type="text" #meuInput>
+
+<!-- Cria um campo de texto onde o usuário pode digitar algo.
+O atributo #meuInput é uma variável de template que referencia esse campo de entrada no template.  -->
+
+
+<!-- Um botão que, ao ser clicado, executa a função "updateInputText()" no componente. -->
+<button (click)="updateInputText()">Atualizar</button>
+
+<!-- Cria um botão com o texto "Atualizar".
+Quando o botão é clicado, ele chama o método updateInputText() no componente TypeScript para alterar o texto do campo de entrada. -->
+
+<!-- Botão que chama a função 'focus()' ao ser clicado -->
+<button (click)="focus()">Foco</button> 
+<!-- Quando clicado, este botão define o foco no campo de entrada acima -->
+
+<!-- Uma <div> exibindo o texto inicial -->
+<div #minhaDiv>
+  Conteúdo Inicial
+</div>
+<!-- O atributo #minhaDiv cria uma referência local para acessar esta <div> no código TypeScript -->
+
+<!-- Botão que chama a função 'updateDivContent()' ao ser clicado -->
+<button (click)="updateDivContent()">Mudar Conteúdo</button> 
+<!-- Quando clicado, este botão troca o texto da <div> -->
