@@ -1,0 +1,21 @@
+/* Estilos SCSS para o componente de lista de usuários. */
+.users-list {
+    width: 100%;           // A largura ocupa 100% do contêiner pai.
+    height: 100%;          // A altura ocupa 100% do contêiner pai.
+    padding: 20px;         // Espaçamento interno ao redor da lista.
+
+    &__item {
+        cursor: pointer;   // Transforma o cursor em um ponteiro ao passar sobre itens da lista.
+    }
+}
+
+/* Estilos específicos para tabelas do Angular Material. */
+:host ::ng-deep .mat-mdc-table {
+    background-color: white; // Define a cor de fundo da tabela.
+}
+:host ::ng-deep .mat-mdc-header-row {
+    color: #000;             // Define a cor do texto do cabeçalho da tabela.
+}
+:host ::ng-deep .mat-mdc-row {
+    color: #000;             // Define a cor do texto das linhas da tabela.
+}
