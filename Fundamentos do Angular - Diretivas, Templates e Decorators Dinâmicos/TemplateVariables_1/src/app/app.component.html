@@ -1,0 +1,61 @@
+<!-- Campo de entrada de texto onde o usuário pode digitar algo. -->
+<input type="text" #meuInput> <!-- O atributo #meuInput cria uma referência local ao elemento. -->
+
+<!-- Mostra na tela o valor digitado no campo de entrada em tempo real. -->
+Valor: {{meuInput.value}} <!-- {{meuInput.value}} acessa o valor do campo de entrada diretamente. -->
+
+<button (click)="changeDetection()">Atualizar</button>
+
+<!-- Explicação geral do funcionamento:
+O campo de entrada <input> permite que o usuário digite um texto. 
+O valor digitado é acessado diretamente na interface pelo {{meuInput.value}}.
+
+
+O botão "Atualizar" chama a função changeDetection() no componente, que usa o serviço ChangeDetectorRef 
+para forçar a atualização da interface, caso necessário.
+
+A detecção de mudanças é gerenciada automaticamente pelo Angular na maioria dos casos. 
+No entanto, este exemplo mostra como forçar manualmente a detecção de mudanças usando o serviço ChangeDetectorRef, 
+algo útil em cenários avançados, como quando as mudanças ocorrem fora do ciclo padrão do Angular. -->
+
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Campo de entrada de texto onde o usuário pode digitar algo. -->
+<!-- 
+Este é um campo de entrada de texto (input), onde o usuário pode digitar qualquer texto. 
+O atributo `#meuInput` cria uma **referência local** para este elemento, permitindo acessá-lo no código ou no template. 
+O atributo `ngModel` está associado ao Angular FormsModule, permitindo a **vinculação bidirecional de dados**. 
+Isso significa que o valor digitado no campo pode ser automaticamente sincronizado com o componente, 
+e mudanças no componente podem ser refletidas diretamente no campo.
+-->
+<!-- <input type="text" #meuInput ngModel>  -->
+
+<!-- Mostra na tela o valor digitado no campo de entrada em tempo real. -->
+<!-- 
+Aqui usamos `{{meuInput.value}}` para exibir o valor atual do campo de entrada diretamente no template. 
+O `{{ }}` é chamado de **interpolação** no Angular e é usado para exibir dados dinâmicos na interface.
+Sempre que o valor do campo de entrada muda, o texto exibido aqui será atualizado automaticamente graças ao `ngModel`.
+-->
+<!-- Valor: {{meuInput.value}}  -->
+
+<!-- ------------------------------------------------------------------- -->
+<!-- Campo de entrada de texto onde o usuário pode digitar algo. -->
+<!-- 
+Este é um campo de entrada de texto (`<input>`), onde o usuário pode digitar qualquer coisa.
+O atributo `[(ngModel)]="teste"` faz a **vinculação bidirecional de dados** entre o campo de entrada e a variável `teste` no componente Angular.
+Isso significa que:
+1. Sempre que o usuário digitar algo no campo, o valor da variável `teste` será atualizado automaticamente.
+2. Se a variável `teste` for alterada no código do componente, o valor exibido no campo também será atualizado automaticamente.
+-->
+<!-- <input type="text" [(ngModel)]="teste"> -->
+
+<!-- Mostra na tela o valor digitado no campo de entrada em tempo real. -->
+<!-- 
+Aqui usamos `{{teste}}` para exibir o valor atual da variável `teste` diretamente no HTML.
+O `{{ }}` é conhecido como **interpolação** no Angular e serve para exibir valores dinâmicos na interface.
+Neste caso:
+1. Sempre que o usuário digitar algo no campo de entrada, o texto exibido aqui será atualizado automaticamente.
+2. Quando a página carrega, o texto exibido será o valor inicial da variável `teste`, que é definido no componente como 'Jessica'.
+-->
+<!-- Valor: {{teste}} -->
+
