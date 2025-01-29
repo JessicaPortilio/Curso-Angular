@@ -1,0 +1,34 @@
+<!-- Define uma referência local (#meuButton) para o botão, permitindo que ele seja acessado no código TypeScript. -->
+<!-- Usa a diretiva *ngFor para criar um botão para cada item na lista buttonsList. -->
+<!-- Adiciona um evento de clique que chama o método changeColor quando o botão é clicado. -->
+<!-- Exibe o texto do botão, que vem da lista buttonsList. -->
+
+<!-- <button 
+  #meuButton
+  *ngFor="let btn of buttonsList"
+  (click)="changeColor($event)"
+  >{{btn}}</button> -->
+
+
+<!-- Define uma referência local (#meuButton) para o botão, permitindo que ele seja acessado no código TypeScript. -->
+<!-- Adiciona uma classe dinâmica ao botão, onde "i" é o índice do botão na lista (ex: btn-0, btn-1, etc.). -->
+<!-- Usa a diretiva *ngFor para criar um botão para cada item na lista buttonsList. A variável "i" armazena o índice do item. -->
+<!-- diciona um evento de clique que chama o método changeColor quando o botão é clicado. -->
+<!-- Exibe o texto do botão, que vem da lista buttonsList. -->
+<button 
+  #meuButton
+  class="btn-{{ i }}"
+  *ngFor="let btn of buttonsList; let i = index"
+  (click)="changeColor($event)"
+  >{{btn}}</button>
+
+  <br>
+  <br>
+<!-- Botão que, ao ser clicado, chama o método resetButtons para resetar as cores dos botões. -->
+<button (click)="resetButtons()">Resetar</button>
+
+<!-- Botão que, ao ser clicado, chama o método first para interagir com o primeiro botão da lista. -->
+<button (click)="first()">Pegar Primeiro</button>
+
+<!-- Botão que, ao ser clicado, chama o método remove para remover o primeiro item da lista buttonsList. -->
+<button (click)="remove()">Remover Item</button>
