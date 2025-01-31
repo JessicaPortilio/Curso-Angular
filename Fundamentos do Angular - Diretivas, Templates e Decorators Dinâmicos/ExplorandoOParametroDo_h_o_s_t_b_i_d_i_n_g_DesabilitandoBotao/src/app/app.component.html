@@ -1,0 +1,20 @@
+<!-- Usa um componente chamado "app-com-diretiva" -->
+<app-com-diretiva></app-com-diretiva>
+
+<!-- Botão desabilitado diretamente com o atributo "disabled" -->
+<button disabled>Meu Botão</button>
+
+<!-- Botão com o atributo "disabled" controlado por Angular -->
+<button [attr.disabled]="false">Meu Botão attr</button>
+
+<!-- Botão com a propriedade "disabled" controlada pelo Angular -->
+<button [disabled]="false">Meu botão prop</button>
+
+<!-- Botão que usa uma diretiva para controlar a propriedade "disabled" -->
+<button appDisabledDirective>Meu botão prop diretiva</button>
+
+<!-- O que acontece aqui?
+✅ O primeiro botão (<button disabled>) está desativado porque o atributo disabled foi colocado diretamente no HTML.
+✅ O segundo botão ([attr.disabled]="false") não está desativado porque o Angular entende false, mas como é um atributo, ele pode ainda afetar o DOM.
+✅ O terceiro botão ([disabled]="false") está ativado, pois disabled é tratado como propriedade do botão.
+✅ O quarto botão (appDisabledDirective) usa uma diretiva personalizada para controlar seu estado de habilitado/desabilitado. -->
