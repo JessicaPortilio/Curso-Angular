@@ -1,0 +1,70 @@
+<!-- Usa um componente chamado "app-com-diretiva" -->
+<app-com-diretiva></app-com-diretiva>
+
+<!-- Botão desabilitado diretamente com o atributo "disabled" -->
+<!-- <button disabled>Meu Botão</button> -->
+
+<!-- Botão com o atributo "disabled" controlado por Angular -->
+<!-- <button [attr.disabled]="false">Meu Botão attr</button> -->
+
+<!-- Botão com a propriedade "disabled" controlada pelo Angular -->
+<!-- <button [disabled]="false">Meu botão prop</button> -->
+
+<!-- Botão que usa uma diretiva para controlar a propriedade "disabled" -->
+<!-- <button appDisabledDirective>Meu botão prop diretiva</button> -->
+
+<!-- O que acontece aqui?
+✅ O primeiro botão (<button disabled>) está desativado porque o atributo disabled foi colocado diretamente no HTML.
+✅ O segundo botão ([attr.disabled]="false") não está desativado porque o Angular entende false, mas como é um atributo, ele pode ainda afetar o DOM.
+✅ O terceiro botão ([disabled]="false") está ativado, pois disabled é tratado como propriedade do botão.
+✅ O quarto botão (appDisabledDirective) usa uma diretiva personalizada para controlar seu estado de habilitado/desabilitado. -->
+
+<!-- Parágrafo normal com estilos inline -->
+<!-- <p style="background-color: orange; color: white;">Parágrafo Normal</p> -->
+<!-- Este parágrafo tem estilos CSS definidos diretamente dentro da tag p, usando style="...". -->
+
+<!-- Estilos usando a diretiva attr.style -->
+<!-- <p [attr.style]="'background-color: orange; color: white;'">Attr</p> -->
+<!-- Aqui, estamos vinculando ([attr.style]) um atributo HTML style à string com estilos CSS. -->
+<!-- Esse método pode ser útil, mas não é tão eficiente para manipulação dinâmica. -->
+
+<!-- Estilos usando [style] -->
+<!-- <p [style]="'background-color: orange; color: white;'">Prop</p> -->
+<!-- Aqui, [style] define os estilos diretamente no DOM, diferente de [attr.style], que apenas altera o atributo HTML. -->
+
+<!-- Estilos usando um objeto JavaScript -->
+<!-- <p [style]="{
+    backgroundColor: 'orange',
+    color: 'white'
+}">Obj</p> -->
+<!-- Agora, usamos um objeto JavaScript para definir os estilos dinamicamente. -->
+<!-- Isso é útil quando queremos alterar os valores de maneira programada. -->
+
+<!-- Aplicando estilos com uma diretiva personalizada -->
+<!-- <p appStyle >Diretiva</p> -->
+<!-- Este parágrafo usa a diretiva appStyle, que será definida em TypeScript. -->
+<!-- O Angular aplicará automaticamente os estilos definidos dentro da diretiva. -->
+
+<!-- O parágrafo recebe a classe "meu-text" normalmente via atributo class -->
+<!-- <p class="meu-text">Normal</p> -->
+
+<!-- O parágrafo recebe a classe "meu-text" usando [attr.class] para definir o atributo class diretamente -->
+<!-- <p [attr.class]="'meu-text'">Atrr</p> -->
+
+<!-- O parágrafo recebe duas classes ("meu-text" e "meu-size") usando [className], que é a propriedade do DOM -->
+<!-- <p [className]="'meu-text meu-size'">Prop Class Name</p> -->
+
+<!-- O parágrafo recebe classes de forma condicional -->
+<!-- <p [class]="{
+    'meu-text': true,  
+    'meu-size': false  
+}">Prop Class</p> -->
+
+<!-- O parágrafo recebe classes através da diretiva personalizada "appClass" -->
+<!-- <p appClass>Diretiva</p> -->
+
+
+<input appListenerDirective type="text">
+
+<!-- Criamos um campo de entrada (<input>) que terá a diretiva personalizada appListenerDirective. -->
+<!-- Essa diretiva permitirá capturar eventos de clique e digitação no campo de entrada. -->
