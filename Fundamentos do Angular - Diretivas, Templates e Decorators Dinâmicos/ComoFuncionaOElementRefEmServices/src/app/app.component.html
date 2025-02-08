@@ -1,0 +1,15 @@
+<!-- 🔹 Aplica a diretiva `appFocusSecondInput` a uma <div> sem inputs -->
+    <div appFocusSecondInput></div>
+    <br>
+    
+    <!-- 🔹 Aplica a mesma diretiva a uma <div> que contém três inputs -->
+    <!-- Quando essa diretiva for aplicada à <div>, o segundo input será focado automaticamente assim que a página carregar. -->
+    <div appFocusSecondInput>
+        <input placeholder="Input 1">
+        <input placeholder="Input 2">
+        <input placeholder="Input 3">
+    </div>
+    
+    <!-- 🔹 Botão que, ao ser clicado, chama a função `createElement()`, que cria uma nova <div> -->
+    <button (click)="createElement()">Criar Elemento</button>
+    
