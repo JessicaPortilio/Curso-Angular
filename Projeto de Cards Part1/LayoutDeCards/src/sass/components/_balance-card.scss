@@ -1,0 +1,39 @@
+.balance-card {
+    .header { // Estilo para o cabeçalho do cartão 
+        background: #e07c32; // Define a cor de fundo como laranja escuro 
+        color: black; // Define a cor do texto como preto 
+        padding: 10px; // Adiciona espaço ao redor do conteúdo do cabeçalho 
+        display: flex; // Usa o Flexbox para organizar os itens dentro do cabeçalho 
+        align-items: center; // Alinha verticalmente o conteúdo do cabeçalho 
+        justify-content: space-between; // Mantém o valor à direita
+        font-weight: bold; // Torna o texto em negrito 
+
+        .header-content { // Estilo para o conteúdo que contém o ícone e o título 
+            display: flex; // Usa o Flexbox para alinhar o ícone e o texto horizontalmente 
+            align-items: center; // Alinha o ícone e o texto verticalmente
+        }
+
+        img { // Estilo para o ícone dentro do cabeçalho 
+            width: 24px; // Define a largura do ícone 
+            height: 24px; // Define a altura do ícone 
+            margin-right: 10px; // Adiciona espaço entre o ícone e o texto
+        }
+    }
+    background-color: white; // Define a cor de fundo do cartão como branco 
+    
+    .saldo { // Estilo para as linhas que exibem os saldos 
+        padding: 15px; // Adiciona um espaço de 15px ao redor do texto 
+        border-bottom: 1px solid darkgrey; // Adiciona uma linha abaixo de cada saldo 
+        display: flex; // Usa o Flexbox para alinhar os itens na mesma linha 
+        justify-content: space-between; // Alinha o texto à esquerda e o valor à direita 
+        font-size: 14px; // Define o tamanho da fonte como 14px 
+    }
+    
+    .resumo { // Estilo para a linha de resumo 
+        background-color: #ddd; // Define a cor de fundo como cinza claro 
+        padding: 15px; // Adiciona espaço ao redor do conteúdo 
+        display: flex; // Usa o Flexbox para organizar os itens 
+        justify-content: space-between; // Alinha o texto à esquerda e o valor à direita 
+        font-size: 14px; // Define o tamanho da fonte como 14px 
+    }
+}

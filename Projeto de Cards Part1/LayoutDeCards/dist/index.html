@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Define o início do documento HTML e define o idioma como inglês -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres utilizado (UTF-8), que suporta a maioria dos caracteres especiais) -->
+    <title>Cards</title> <!-- Define o título da página que aparece na aba do navegador -->
+    <link rel="stylesheet" href="css/style.css" /> <!-- Vincula o arquivo CSS externo para estilizar a página -->
+</head>
+
+<body>
+    <div class="container"> <!-- Contêiner principal que irá agrupar os elementos dentro da página -->
+        <div class="item"> <!-- Item individual que contém um cartão de saldo -->
+            <div class="balance-card"> <!-- Cartão que exibe os saldos -->
+                <div class="header"> <!-- Cabeçalho do cartão, onde aparece o título e o valor -->
+                    <div class="header-content"> <!-- Contém o ícone e o título -->
+                        <img src="./icons/icon-hand.png" alt="imagem-saldos-disponíveis"> <!-- Ícone que aparece ao lado do título -->
+                        <span>Saldos Disponíveis</span> <!-- Título do cartão -->
+                    </div>
+                    <div>R$ 100,00</div> <!-- Exibe o valor total de saldos disponíveis -->
+                </div>
+                <!-- Exibe cada saldo de conta em uma linha separada -->
+                <div class="saldo"> <span>Conta Corrente</span> <span>R$ 200,00</span> </div>
+                <div class="saldo"> <span>Conta Corrente Saldo Vinculados</span> <span>R$ 300,00</span> </div>
+                <div class="saldo"> <span>Conta Poupança Saldo Vinculados</span> <span>R$ 400,00</span> </div>
+                <div class="saldo"> <span>Investimentos com Baixa Automática</span> <span>R$ 500,00</span> </div>
+                <div class="saldo"> <span>Investimentos sem Baixa Automática</span> <span>R$ 500,00</span> </div>
+                <!-- Exibe a linha de resumo com o total e saldo livre para movimentação -->
+                <div style="margin: 10px; padding: 10px;">
+                    <div class="resumo"> <span> TOTAL</span> <span>R$ 1000,00</span> </div>
+                    <div class="resumo"> <span>LIVRE PARA MOVIMENTAÇÃO</span> <span>R$ 1000,00</span> </div>
+                </div>
+            </div>
+
+            <!-- Cartões adicionais para exibir mais informações -->
+            <div class="item">
+                <div class="credit-card"> <!-- Cartão de crédito, ainda sem conteúdo -->
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="debit-card"> <!-- Cartão de débito, ainda sem conteúdo -->
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="client-infos-card"> <!-- Cartão de informações do cliente, ainda sem conteúdo -->
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
