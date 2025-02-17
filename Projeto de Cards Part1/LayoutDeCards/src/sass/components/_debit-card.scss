@@ -1,3 +1,29 @@
-.debit-card {
+.debit-card { /* Define o estilo para a classe "debit-card", que representa o cartão de débito */
     
+    .header { /* Define o estilo do cabeçalho do cartão */
+        background: #e07c32; /* Define a cor de fundo do cabeçalho como um tom de laranja escuro */
+        color: black; /* Define a cor do texto dentro do cabeçalho como preto */
+        padding: 10px; /* Adiciona um espaçamento interno de 10 pixels ao redor do conteúdo */
+        display: flex; /* Utiliza o modelo Flexbox para organizar os elementos dentro do cabeçalho */
+        align-items: center; /* Alinha os elementos verticalmente no centro */
+        justify-content: space-between; /* Distribui os elementos dentro do cabeçalho, separando-os uniformemente */
+        font-weight: bold; /* Define o texto como negrito para maior destaque */
+        
+        .header-content { /* Define o estilo para o conteúdo dentro do cabeçalho */
+            display: flex; /* Usa Flexbox para organizar os elementos (ícone e texto) em linha */
+            align-items: center; /* Garante que os itens fiquem alinhados verticalmente no centro */
+        }
+
+        img { /* Define o estilo para a imagem dentro do cabeçalho */
+            width: 24px; /* Define a largura da imagem como 24 pixels */
+            height: 24px; /* Define a altura da imagem como 24 pixels */
+            margin-right: 10px; /* Adiciona um espaço de 10 pixels entre a imagem e o texto ao lado */
+        }
+    }
+
+    background-color: white; /* Define a cor de fundo do cartão como branco */
+
+    .texto { /* Define o estilo do texto dentro do cartão */
+        padding: 20px; /* Adiciona um espaçamento interno de 20 pixels ao redor do texto */
+    }
 }

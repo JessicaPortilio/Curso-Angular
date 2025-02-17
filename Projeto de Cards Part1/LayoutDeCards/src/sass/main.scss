@@ -1,11 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+/* Importa a fonte 'Poppins' do Google Fonts.
+    - 'wght@300;500' indica que estamos importando os pesos 300 (leve) e 500 (médio) dessa fonte.
+    - 'display=swap' ajuda a carregar a fonte de maneira mais eficiente, evitando que o texto desapareça temporariamente enquanto a fonte é carregada. */
 
 @import "./reset/reset";
+/* Importa um arquivo chamado "reset.scss" que provavelmente contém um reset de estilos.
+    - Esse arquivo serve para garantir que todos os navegadores comecem a exibir os estilos de forma mais uniforme, eliminando estilos padrão diferentes entre eles. */
 
 @import "./components/container";
+/* Importa o arquivo "container.scss", que provavelmente contém estilos relacionados à estrutura principal da página,
+    como largura máxima, margens e alinhamento do conteúdo. */
+
 @import "./components/balance-card";
+/* Importa o arquivo "balance-card.scss", que provavelmente contém os estilos do cartão de saldo, 
+    definindo cores, espaçamentos e organização visual dos elementos desse cartão. */
+
 @import "./components/credit-card";
+/* Importa o arquivo "credit-card.scss", que deve conter os estilos do cartão de crédito.
+    Isso pode incluir formatação para exibição do número do cartão, nome do titular e tipo do cartão. */
+
 @import "./components/debit-card";
+/* Importa o arquivo "debit-card.scss", que deve conter os estilos do cartão de débito.
+    Assim como no cartão de crédito, pode incluir detalhes como formatação do número do cartão, 
+    nome do titular e outras informações específicas desse tipo de cartão. */
+
 @import "./components/client-infos-card";
+/* Importa o arquivo "client-infos-card.scss", que provavelmente contém os estilos do cartão de informações do cliente,
+    incluindo detalhes como nome do cliente, saldo e outras informações relevantes. */
+
 
 

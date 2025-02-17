@@ -1,52 +1,108 @@
-<!DOCTYPE html>
-<html lang="en"> <!-- Define o início do documento HTML e define o idioma como inglês -->
+<!DOCTYPE html> <!-- Declaração do tipo de documento HTML -->
+<html lang="en"> <!-- Início do documento HTML e definição do idioma como inglês -->
 
-<head>
-    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres utilizado (UTF-8), que suporta a maioria dos caracteres especiais) -->
-    <title>Cards</title> <!-- Define o título da página que aparece na aba do navegador -->
-    <link rel="stylesheet" href="css/style.css" /> <!-- Vincula o arquivo CSS externo para estilizar a página -->
-</head>
+    <head>
+        <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 para suportar caracteres especiais -->
+        <title>Cards</title> <!-- Define o título da página que aparece na aba do navegador -->
+        <link rel="stylesheet" href="css/style.css" /> <!-- Conecta o arquivo CSS externo para estilizar a página -->
+    </head>
 
-<body>
-    <div class="container"> <!-- Contêiner principal que irá agrupar os elementos dentro da página -->
-        <div class="item"> <!-- Item individual que contém um cartão de saldo -->
-            <div class="balance-card"> <!-- Cartão que exibe os saldos -->
-                <div class="header"> <!-- Cabeçalho do cartão, onde aparece o título e o valor -->
-                    <div class="header-content"> <!-- Contém o ícone e o título -->
-                        <img src="./icons/icon-hand.png" alt="imagem-saldos-disponíveis"> <!-- Ícone que aparece ao lado do título -->
-                        <span>Saldos Disponíveis</span> <!-- Título do cartão -->
+    <body>
+        <div class="container"> <!-- Contêiner principal que agrupa todos os elementos da página -->
+
+            <div class="item"> <!-- Um cartão individual que exibe informações de saldo -->
+                <div class="balance-card"> <!-- Estrutura do cartão de saldo -->
+
+                    <div class="header"> <!-- Cabeçalho do cartão que contém o título e o valor -->
+                        <div class="header-content"> <!-- Contém o ícone e o título do cartão -->
+                            <img src="./icons/icon-hand.png" alt="imagem-saldos-disponíveis">
+                            <!-- Ícone representando saldo disponível -->
+                            <span>Saldos Disponíveis</span> <!-- Texto do título do cartão -->
+                        </div>
+                        <div>R$ 100,00</div> <!-- Valor total disponível -->
                     </div>
-                    <div>R$ 100,00</div> <!-- Exibe o valor total de saldos disponíveis -->
-                </div>
-                <!-- Exibe cada saldo de conta em uma linha separada -->
-                <div class="saldo"> <span>Conta Corrente</span> <span>R$ 200,00</span> </div>
-                <div class="saldo"> <span>Conta Corrente Saldo Vinculados</span> <span>R$ 300,00</span> </div>
-                <div class="saldo"> <span>Conta Poupança Saldo Vinculados</span> <span>R$ 400,00</span> </div>
-                <div class="saldo"> <span>Investimentos com Baixa Automática</span> <span>R$ 500,00</span> </div>
-                <div class="saldo"> <span>Investimentos sem Baixa Automática</span> <span>R$ 500,00</span> </div>
-                <!-- Exibe a linha de resumo com o total e saldo livre para movimentação -->
-                <div style="margin: 10px; padding: 10px;">
-                    <div class="resumo"> <span> TOTAL</span> <span>R$ 1000,00</span> </div>
-                    <div class="resumo"> <span>LIVRE PARA MOVIMENTAÇÃO</span> <span>R$ 1000,00</span> </div>
+
+                    <!-- Listagem de diferentes tipos de saldos -->
+                    <div class="saldo"> <span>Conta Corrente</span> <span>R$ 200,00</span> </div>
+                    <hr class="passamento"> <!-- Linha divisória -->
+                    <div class="saldo"> <span>Conta Corrente Saldo Vinculados</span> <span>R$ 300,00</span> </div>
+                    <hr class="passamento">
+                    <div class="saldo"> <span>Conta Poupança Saldo Vinculados</span> <span>R$ 400,00</span> </div>
+                    <hr class="passamento">
+                    <div class="saldo"> <span>Investimentos com Baixa Automática</span> <span>R$ 500,00</span> </div>
+                    <hr class="passamento">
+                    <div class="saldo"> <span>Investimentos sem Baixa Automática</span> <span>R$ 500,00</span> </div>
+                    <hr class="passamento">
+
+                    <!-- Resumo total e valor livre para movimentação -->
+                    <div style="margin: 10px; padding: 10px;">
+                        <div class="resumo"> <span> TOTAL</span> <span>R$ 1000,00</span> </div>
+                        <div class="resumo"> <span>LIVRE PARA MOVIMENTAÇÃO</span> <span>R$ 1000,00</span> </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Cartões adicionais para exibir mais informações -->
+            <!-- Cartão de crédito -->
             <div class="item">
-                <div class="credit-card"> <!-- Cartão de crédito, ainda sem conteúdo -->
+                <div class="credit-card">
+                    <div class="header">
+                        <div class="header-content">
+                            <img src="./icons/icon-credit-card.png" alt=""> <!-- Ícone do cartão de crédito -->
+                            <span>Cartão de Crédito</span> <!-- Título do cartão -->
+                        </div>
+                    </div>
+
+                    <div class="master-card passamento"> <!-- Informações do cartão -->
+                        <span class="card-number">1234567891011</span> <!-- Número fictício do cartão -->
+                        <span class="card-name">FELIPE DA SILVA FREITAS</span> <!-- Nome do titular -->
+                        <span class="card-type">MASTER CARD</span> <!-- Tipo do cartão -->
+                    </div>
+
+                    <!-- Informações de limite de crédito -->
+                    <div class="saldo passamento"> <span>Limite de Compra</span><span>R$1000,00</span> </div>
+                    <hr class="passamento">
+                    <div class="saldo passamento"> <span>Disponíveis</span><span>R$1200,00</span> </div>
+                    <div class="saldo passamento"> <span>Limite de Saque</span><span>R$2000,00</span> </div>
+                    <hr class="passamento">
+                    <div class="saldo passamento"> <span>Disponíveis</span><span>R$1300,00</span> </div>
+                    <div class="saldo passamento" style="padding-bottom: 20px;"> <span>Limite Total
+                            Utilizado</span><span>R$3000,00</span> </div>
                 </div>
             </div>
 
+            <!-- Cartão de débito -->
             <div class="item">
-                <div class="debit-card"> <!-- Cartão de débito, ainda sem conteúdo -->
+                <div class="debit-card">
+                    <div class="header">
+                        <div class="header-content">
+                            <img src="./icons/icon-debit-card.png" alt=""> <!-- Ícone do cartão de débito -->
+                            <span>Cartão de Débito</span> <!-- Título do cartão -->
+                        </div>
+                    </div>
+                    <div class="texto"> <!-- Mensagem informando que o cliente não possui cartão de débito -->
+                        <span>Este cliente não possui Cartão de Débito.</span>
+                    </div>
                 </div>
             </div>
 
+            <!-- Informações do cliente -->
             <div class="item">
-                <div class="client-infos-card"> <!-- Cartão de informações do cliente, ainda sem conteúdo -->
+                <div class="client-infos-card">
+                    <div class="header">
+                        <div class="header-content">
+                            <img src="./icons/icon-client.png" alt=""> <!-- Ícone representando cliente -->
+                            <span>Informações do Cliente</span> <!-- Título do cartão -->
+                        </div>
+                    </div>
+
+                    <!-- Saldos do cliente -->
+                    <div class="saldo"> <span>Conta Corrente</span> <span>R$ 200,00</span> </div>
+                    <hr class="passamento">
+                    <div class="saldo"> <span>Conta Corrente Saldo Vinculados</span> <span>R$ 300,00</span> </div>
+                    <hr class="passamento">
+                    <div class="saldo"> <span>Conta Poupança Saldo Vinculados</span> <span>R$ 400,00</span> </div>
                 </div>
             </div>
         </div>
-</body>
-
+    </body>
 </html>

@@ -1,15 +1,21 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Importa a fonte 'Poppins' do Google Fonts.
+    - 'wght@300;500' indica que estamos importando os pesos 300 (leve) e 500 (médio) dessa fonte.
+    - 'display=swap' ajuda a carregar a fonte de maneira mais eficiente, evitando que o texto desapareça temporariamente enquanto a fonte é carregada. */
+* { /* Aplica essas configurações a todos os elementos da página */
+  box-sizing: border-box; /* Garante que a largura e a altura dos elementos incluam as bordas e o preenchimento */
+  margin: 0; /* Remove qualquer margem externa padrão dos elementos */
+  padding: 0; /* Remove qualquer espaçamento interno padrão dos elementos */
 }
 
-body {
-  background-color: darkgrey;
-  font-family: "Poppins", sans-serif;
+body { /* Define os estilos para o corpo (fundo) da página */
+  background-color: darkgrey; /* Define a cor de fundo da página como cinza escuro */
+  font-family: "Poppins", sans-serif; /* Define a fonte do texto como 'Poppins'. Se essa fonte não estiver disponível, usa qualquer fonte sem serifa */
 }
 
+/* Importa um arquivo chamado "reset.scss" que provavelmente contém um reset de estilos.
+    - Esse arquivo serve para garantir que todos os navegadores comecem a exibir os estilos de forma mais uniforme, eliminando estilos padrão diferentes entre eles. */
 .container {
   width: 100%;
   height: 100%;
@@ -22,40 +28,168 @@ body {
   padding: 10px;
 }
 
+/* Importa o arquivo "container.scss", que provavelmente contém estilos relacionados à estrutura principal da página,
+    como largura máxima, margens e alinhamento do conteúdo. */
 .balance-card {
-  background-color: white;
+  /* Define o estilo do cartão de saldo */
+  background-color: white; /* Define o fundo do cartão como branco */
 }
-.balance-card .header {
-  background: #e07c32;
-  color: black;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: bold;
+.balance-card .header { /* Estiliza o cabeçalho do cartão */
+  background: #e07c32; /* Define a cor de fundo como laranja escuro */
+  color: black; /* Define a cor do texto como preto */
+  padding: 10px; /* Adiciona espaço ao redor do conteúdo do cabeçalho */
+  display: flex; /* Usa o Flexbox para organizar os itens dentro do cabeçalho */
+  align-items: center; /* Alinha verticalmente os itens dentro do cabeçalho */
+  justify-content: space-between; /* Mantém o título à esquerda e o valor à direita */
+  font-weight: bold; /* Torna o texto do cabeçalho em negrito */
 }
-.balance-card .header .header-content {
-  display: flex;
-  align-items: center;
+.balance-card .header .header-content { /* Estiliza o bloco que contém o ícone e o título */
+  display: flex; /* Usa o Flexbox para alinhar o ícone e o título horizontalmente */
+  align-items: center; /* Alinha verticalmente o ícone e o título */
 }
-.balance-card .header img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+.balance-card .header img { /* Estiliza o ícone dentro do cabeçalho */
+  width: 24px; /* Define a largura do ícone como 24px */
+  height: 24px; /* Define a altura do ícone como 24px */
+  margin-right: 10px; /* Adiciona espaço de 10px entre o ícone e o texto */
 }
-.balance-card .saldo {
-  padding: 15px;
-  border-bottom: 1px solid darkgrey;
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
+.balance-card .saldo { /* Estiliza as linhas que exibem os diferentes saldos disponíveis */
+  padding: 15px; /* Adiciona um espaço de 15px ao redor do conteúdo */
+  display: flex; /* Usa o Flexbox para organizar os elementos */
+  justify-content: space-between; /* Mantém o nome do saldo à esquerda e o valor à direita */
+  font-size: 14px; /* Define o tamanho da fonte como 14px */
 }
-.balance-card .resumo {
-  background-color: #ddd;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
+.balance-card .resumo { /* Estiliza a seção de resumo */
+  background-color: #ddd; /* Define a cor de fundo como cinza claro */
+  padding: 15px; /* Adiciona um espaço de 15px ao redor do conteúdo */
+  display: flex; /* Usa o Flexbox para organizar os elementos */
+  justify-content: space-between; /* Mantém o nome do resumo à esquerda e o valor à direita */
+  font-size: 14px; /* Define o tamanho da fonte como 14px */
 }
+.balance-card .passamento { /* Estiliza os espaçamentos entre as seções do cartão */
+  margin-left: 10px; /* Adiciona uma margem de 10px à esquerda */
+  margin-right: 10px; /* Adiciona uma margem de 10px à direita */
+}
+
+/* Importa o arquivo "balance-card.scss", que provavelmente contém os estilos do cartão de saldo, 
+    definindo cores, espaçamentos e organização visual dos elementos desse cartão. */
+.credit-card { /* Define os estilos para um cartão de crédito */
+  background-color: white; /* Define a cor de fundo do cartão como branco */
+}
+.credit-card .header { /* Estiliza o cabeçalho do cartão */
+  background: #e07c32; /* Define a cor de fundo do cabeçalho como laranja escuro */
+  color: black; /* Define a cor do texto como preto */
+  padding: 10px; /* Adiciona um espaço interno de 10 pixels ao redor do conteúdo */
+  display: flex; /* Utiliza o modelo Flexbox para organizar os elementos dentro do cabeçalho */
+  align-items: center; /* Alinha verticalmente os itens do cabeçalho no centro */
+  justify-content: space-between; /* Mantém os elementos afastados uniformemente */
+  font-weight: bold; /* Torna o texto do cabeçalho em negrito */
+}
+.credit-card .header .header-content { /* Define o estilo para o conteúdo dentro do cabeçalho */
+  display: flex; /* Usa Flexbox para alinhar os itens em linha */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+}
+.credit-card .header img { /* Define o estilo para a imagem dentro do cabeçalho (ícone ou logotipo) */
+  width: 24px; /* Define a largura da imagem como 24 pixels */
+  height: 24px; /* Define a altura da imagem como 24 pixels */
+  margin-right: 10px; /* Adiciona um espaço de 10 pixels entre a imagem e o texto */
+}
+.credit-card .master-card { /* Define o estilo da seção que contém informações do cartão MasterCard */
+  display: flex; /* Usa Flexbox para organizar os elementos */
+  flex-direction: column; /* Organiza os itens em coluna (de cima para baixo) */
+  align-items: flex-start; /* Alinha os elementos no início (lado esquerdo) */
+  width: 100%; /* Define a largura para ocupar todo o espaço disponível */
+  padding-top: 20px; /* Adiciona um espaço superior de 20 pixels */
+}
+.credit-card .card-number { /* Define o estilo do número do cartão */
+  width: 100%; /* Faz com que ocupe toda a largura do contêiner */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+.credit-card .card-name { /* Define o estilo do nome do titular do cartão */
+  width: 100%; /* Faz com que ocupe toda a largura do contêiner */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+.credit-card .card-type { /* Define o estilo do tipo do cartão (por exemplo, Visa, MasterCard) */
+  position: absolute; /* Define uma posição absoluta dentro do contêiner pai */
+  top: 50%; /* Move o elemento 50% para baixo em relação ao topo do contêiner pai */
+  left: 85%; /* Move o elemento 85% para a direita em relação à largura do contêiner pai */
+  transform: translate(-50%, -50%); /* Ajusta a posição exata para centralizar o elemento */
+  white-space: nowrap; /* Impede que o texto quebre para a próxima linha */
+}
+.credit-card .master-card { /* Define um posicionamento relativo para a seção master-card */
+  position: relative; /* Permite que elementos filhos com posição absoluta se ajustem a ele */
+}
+.credit-card .saldo { /* Define o estilo da seção que exibe o saldo */
+  display: flex; /* Usa Flexbox para organizar os elementos */
+  justify-content: space-between; /* Distribui os itens uniformemente entre os lados */
+  padding-top: 20px; /* Adiciona um espaço superior de 20 pixels */
+}
+.credit-card .passamento { /* Define margens externas para espaçamento */
+  margin-left: 20px; /* Adiciona um espaço de 20 pixels à esquerda */
+  margin-right: 15px; /* Adiciona um espaço de 15 pixels à direita */
+}
+
+/* Importa o arquivo "credit-card.scss", que deve conter os estilos do cartão de crédito.
+    Isso pode incluir formatação para exibição do número do cartão, nome do titular e tipo do cartão. */
+.debit-card { /* Define o estilo para a classe "debit-card", que representa o cartão de débito */
+  background-color: white; /* Define a cor de fundo do cartão como branco */
+}
+.debit-card .header { /* Define o estilo do cabeçalho do cartão */
+  background: #e07c32; /* Define a cor de fundo do cabeçalho como um tom de laranja escuro */
+  color: black; /* Define a cor do texto dentro do cabeçalho como preto */
+  padding: 10px; /* Adiciona um espaçamento interno de 10 pixels ao redor do conteúdo */
+  display: flex; /* Utiliza o modelo Flexbox para organizar os elementos dentro do cabeçalho */
+  align-items: center; /* Alinha os elementos verticalmente no centro */
+  justify-content: space-between; /* Distribui os elementos dentro do cabeçalho, separando-os uniformemente */
+  font-weight: bold; /* Define o texto como negrito para maior destaque */
+}
+.debit-card .header .header-content { /* Define o estilo para o conteúdo dentro do cabeçalho */
+  display: flex; /* Usa Flexbox para organizar os elementos (ícone e texto) em linha */
+  align-items: center; /* Garante que os itens fiquem alinhados verticalmente no centro */
+}
+.debit-card .header img { /* Define o estilo para a imagem dentro do cabeçalho */
+  width: 24px; /* Define a largura da imagem como 24 pixels */
+  height: 24px; /* Define a altura da imagem como 24 pixels */
+  margin-right: 10px; /* Adiciona um espaço de 10 pixels entre a imagem e o texto ao lado */
+}
+.debit-card .texto { /* Define o estilo do texto dentro do cartão */
+  padding: 20px; /* Adiciona um espaçamento interno de 20 pixels ao redor do texto */
+}
+
+/* Importa o arquivo "debit-card.scss", que deve conter os estilos do cartão de débito.
+    Assim como no cartão de crédito, pode incluir detalhes como formatação do número do cartão, 
+    nome do titular e outras informações específicas desse tipo de cartão. */
+.client-infos-card { /* Define os estilos para um cartão de informações do cliente */
+  background-color: white; /* Define a cor de fundo do cartão como branco */
+}
+.client-infos-card .header { /* Estiliza o cabeçalho do cartão */
+  background: #9ef4f7; /* Define a cor de fundo do cabeçalho como um tom de azul claro */
+  color: black; /* Define a cor do texto do cabeçalho como preto */
+  padding: 10px; /* Adiciona um espaçamento interno de 10 pixels ao redor do conteúdo */
+  display: flex; /* Usa o modelo Flexbox para organizar os elementos do cabeçalho */
+  align-items: center; /* Alinha verticalmente os itens ao centro */
+  justify-content: space-between; /* Distribui os itens do cabeçalho de maneira uniforme */
+  font-weight: bold; /* Deixa o texto do cabeçalho em negrito */
+}
+.client-infos-card .header .header-content { /* Define o estilo para o conteúdo dentro do cabeçalho */
+  display: flex; /* Usa Flexbox para alinhar os elementos na horizontal */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+}
+.client-infos-card .header img { /* Define o estilo para a imagem dentro do cabeçalho (ícone ou logotipo) */
+  width: 24px; /* Define a largura da imagem como 24 pixels */
+  height: 24px; /* Define a altura da imagem como 24 pixels */
+  margin-right: 10px; /* Adiciona um espaço de 10 pixels entre a imagem e o texto */
+}
+.client-infos-card .saldo { /* Define o estilo para a seção que exibe o saldo */
+  display: flex; /* Usa Flexbox para organizar os elementos na mesma linha */
+  justify-content: space-between; /* Alinha os elementos de forma distribuída, um à esquerda e outro à direita */
+  padding: 15px; /* Adiciona um espaçamento interno de 15 pixels ao redor do conteúdo */
+}
+.client-infos-card .passamento { /* Define margens externas para espaçamento */
+  margin-left: 10px; /* Adiciona um espaço de 10 pixels à esquerda */
+  margin-right: 10px; /* Adiciona um espaço de 10 pixels à direita */
+}
+
+/* Importa o arquivo "client-infos-card.scss", que provavelmente contém os estilos do cartão de informações do cliente,
+    incluindo detalhes como nome do cliente, saldo e outras informações relevantes. */
 
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,66 @@
-.credit-card {
-    
+.credit-card { /* Define os estilos para um cartão de crédito */
+
+    .header { /* Estiliza o cabeçalho do cartão */
+        background: #e07c32; /* Define a cor de fundo do cabeçalho como laranja escuro */
+        color: black; /* Define a cor do texto como preto */
+        padding: 10px; /* Adiciona um espaço interno de 10 pixels ao redor do conteúdo */
+        display: flex; /* Utiliza o modelo Flexbox para organizar os elementos dentro do cabeçalho */
+        align-items: center; /* Alinha verticalmente os itens do cabeçalho no centro */
+        justify-content: space-between; /* Mantém os elementos afastados uniformemente */
+        font-weight: bold; /* Torna o texto do cabeçalho em negrito */
+
+        .header-content { /* Define o estilo para o conteúdo dentro do cabeçalho */
+            display: flex; /* Usa Flexbox para alinhar os itens em linha */
+            align-items: center; /* Alinha os itens verticalmente no centro */
+        }
+
+        img { /* Define o estilo para a imagem dentro do cabeçalho (ícone ou logotipo) */
+            width: 24px; /* Define a largura da imagem como 24 pixels */
+            height: 24px; /* Define a altura da imagem como 24 pixels */
+            margin-right: 10px; /* Adiciona um espaço de 10 pixels entre a imagem e o texto */
+        }
+    }
+
+    background-color: white; /* Define a cor de fundo do cartão como branco */
+
+    .master-card { /* Define o estilo da seção que contém informações do cartão MasterCard */
+        display: flex; /* Usa Flexbox para organizar os elementos */
+        flex-direction: column; /* Organiza os itens em coluna (de cima para baixo) */
+        align-items: flex-start; /* Alinha os elementos no início (lado esquerdo) */
+        width: 100%; /* Define a largura para ocupar todo o espaço disponível */
+        padding-top: 20px; /* Adiciona um espaço superior de 20 pixels */
+    }
+
+    .card-number { /* Define o estilo do número do cartão */
+        width: 100%; /* Faz com que ocupe toda a largura do contêiner */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    .card-name { /* Define o estilo do nome do titular do cartão */
+        width: 100%; /* Faz com que ocupe toda a largura do contêiner */
+        text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    .card-type { /* Define o estilo do tipo do cartão (por exemplo, Visa, MasterCard) */
+        position: absolute; /* Define uma posição absoluta dentro do contêiner pai */
+        top: 50%; /* Move o elemento 50% para baixo em relação ao topo do contêiner pai */
+        left: 85%; /* Move o elemento 85% para a direita em relação à largura do contêiner pai */
+        transform: translate(-50%, -50%); /* Ajusta a posição exata para centralizar o elemento */
+        white-space: nowrap; /* Impede que o texto quebre para a próxima linha */
+    }
+
+    .master-card { /* Define um posicionamento relativo para a seção master-card */
+        position: relative; /* Permite que elementos filhos com posição absoluta se ajustem a ele */
+    }
+
+    .saldo { /* Define o estilo da seção que exibe o saldo */
+        display: flex; /* Usa Flexbox para organizar os elementos */
+        justify-content: space-between; /* Distribui os itens uniformemente entre os lados */
+        padding-top: 20px; /* Adiciona um espaço superior de 20 pixels */
+    }
+
+    .passamento { /* Define margens externas para espaçamento */
+        margin-left: 20px; /* Adiciona um espaço de 20 pixels à esquerda */
+        margin-right: 15px; /* Adiciona um espaço de 15 pixels à direita */
+    }
 }

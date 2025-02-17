@@ -1,3 +1,36 @@
-.client-infos-card {
+.client-infos-card { /* Define os estilos para um cartão de informações do cliente */
+
+    .header { /* Estiliza o cabeçalho do cartão */
+        background: #9ef4f7; /* Define a cor de fundo do cabeçalho como um tom de azul claro */
+        color: black; /* Define a cor do texto do cabeçalho como preto */
+        padding: 10px; /* Adiciona um espaçamento interno de 10 pixels ao redor do conteúdo */
+        display: flex; /* Usa o modelo Flexbox para organizar os elementos do cabeçalho */
+        align-items: center; /* Alinha verticalmente os itens ao centro */
+        justify-content: space-between; /* Distribui os itens do cabeçalho de maneira uniforme */
+        font-weight: bold; /* Deixa o texto do cabeçalho em negrito */
+
+        .header-content { /* Define o estilo para o conteúdo dentro do cabeçalho */
+            display: flex; /* Usa Flexbox para alinhar os elementos na horizontal */
+            align-items: center; /* Alinha os itens verticalmente no centro */
+        }
+
+        img { /* Define o estilo para a imagem dentro do cabeçalho (ícone ou logotipo) */
+            width: 24px; /* Define a largura da imagem como 24 pixels */
+            height: 24px; /* Define a altura da imagem como 24 pixels */
+            margin-right: 10px; /* Adiciona um espaço de 10 pixels entre a imagem e o texto */
+        }
+    }
+
+    background-color: white; /* Define a cor de fundo do cartão como branco */
     
+    .saldo { /* Define o estilo para a seção que exibe o saldo */
+        display: flex; /* Usa Flexbox para organizar os elementos na mesma linha */
+        justify-content: space-between; /* Alinha os elementos de forma distribuída, um à esquerda e outro à direita */
+        padding: 15px; /* Adiciona um espaçamento interno de 15 pixels ao redor do conteúdo */
+    }
+
+    .passamento { /* Define margens externas para espaçamento */
+        margin-left: 10px; /* Adiciona um espaço de 10 pixels à esquerda */
+        margin-right: 10px; /* Adiciona um espaço de 10 pixels à direita */
+    }
 }
