@@ -1,0 +1,28 @@
+# Criar a pasta do projeto e inicializar o package.json
+
+mkdir meu-projeto && cd meu-projeto
+npm init -y
+
+# Instalar dependências
+npm install --save-dev sass
+
+# Criar a estrutura de diretórios
+mkdir -p src/sass/components src/sass/reset dist/icons
+touch src/sass/main.scss dist/index.html
+
+#4. Adicionar um script no package.json para compilar o Sass
+#Edite o package.json e adicione dentro de "scripts":
+
+"scripts": {
+    "sass": "node-sass src/sass/main.scss -o dist/css",
+    "watch:sass": "sass src/sass/main.scss dist/css/style.css --watch",
+    "start": "live-server dist --port=8080"
+
+
+# Abra o terminal e rode
+npm run start
+
+#depois abra outro terminal, deixe o de cima rodando e rode esse comando no novo terminal:
+
+npm run watch:sass
+#Isso compilará automaticamente o main.scss para dist/css/style.css sempre que houver alterações
