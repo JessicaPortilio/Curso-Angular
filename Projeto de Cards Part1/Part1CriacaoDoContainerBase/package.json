@@ -1,0 +1,20 @@
+{
+  "name": "layoutdecards",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass src/sass/main.scss -o dist/css",
+    "watch:sass": "sass src/sass/main.scss dist/css/style.css --watch",
+    "start": "live-server dist --port=8080"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.84.0"
+  }
+}

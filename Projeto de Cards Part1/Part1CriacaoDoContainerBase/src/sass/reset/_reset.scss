@@ -1,0 +1,11 @@
+* { /* Aplica essas configurações a todos os elementos da página */
+    box-sizing: border-box; /* Garante que a largura e a altura dos elementos incluam as bordas e o preenchimento */
+    margin: 0; /* Remove qualquer margem externa padrão dos elementos */
+    padding: 0; /* Remove qualquer espaçamento interno padrão dos elementos */
+}
+
+body { /* Define os estilos para o corpo (fundo) da página */
+    background-color: darkgrey; /* Define a cor de fundo da página como cinza escuro */
+    font-family: 'Poppins', sans-serif; /* Define a fonte do texto como 'Poppins'. Se essa fonte não estiver disponível, usa qualquer fonte sem serifa */
+}
+

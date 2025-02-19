@@ -1,0 +1,96 @@
+<!DOCTYPE html> <!-- Define o tipo do documento como HTML5 -->
+<html lang="en"> <!-- Início do documento HTML e definição do idioma como inglês -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Define a codificação do documento como UTF-8, permitindo acentos e caracteres especiais -->
+    <title>Cards</title> <!-- Define o título da página que será exibido na aba do navegador -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Importa o arquivo de estilos CSS para personalizar a aparência da página -->
+</head>
+
+<body>
+    <div class="container"> <!-- Cria um contêiner que agrupa todos os elementos visuais da página -->
+
+        <div class="item"> <!-- Cria um item dentro do contêiner, que servirá como um dos cartões da página -->
+            <div class="balance-card"> <!-- Define a estrutura do cartão que exibe informações de saldo -->
+                <div class="balance-card__header"> <!-- Cabeçalho do cartão de saldo -->
+                    <div class="balance-card__header-title"> <!-- Área do título dentro do cabeçalho -->
+                        <img class="balance-card__header-icon" src="./icons/icon-hand.png" alt="">
+                        <!-- Ícone ilustrativo ao lado do título -->
+                        <h1>Saldos Disponíveis</h1> <!-- Texto principal do cabeçalho -->
+                    </div>
+                    <p>R$ 100,00</p> <!-- Valor inicial do saldo disponível -->
+                </div>
+
+                <div class="balance-card__content"> <!-- Corpo do cartão contendo os detalhes do saldo -->
+                    <div class="balance-card__content-item"> <!-- Um item dentro do conteúdo do cartão -->
+                        <p>Conta Corrente</p> <!-- Nome da conta -->
+                        <p>R$ 200,00</p> <!-- Saldo disponível nesta conta -->
+                    </div>
+
+                    <div class="balance-card__content-line"></div> <!-- Linha divisória entre os itens -->
+
+                    <div class="balance-card__content-item"> <!-- Outro item do conteúdo do cartão -->
+                        <p>Conta Corrente Saldo Vinculados</p>
+                        <p>R$ 300,00</p>
+                    </div>
+
+                    <div class="balance-card__content-line"></div>
+
+                    <div class="balance-card__content-item">
+                        <p>Conta Poupança Saldo Vinculados</p>
+                        <p>R$ 400,00</p>
+                    </div>
+
+                    <div class="balance-card__content-line"></div>
+
+                    <div class="balance-card__content-item">
+                        <p>Investimentos com Baixa Automática</p>
+                        <p>R$ 500,00</p>
+                    </div>
+
+                    <div class="balance-card__content-line"></div>
+
+                    <div class="balance-card__content-item">
+                        <p>Investimentos sem Baixa Automática</p>
+                        <p>R$ 500,00</p>
+                    </div>
+
+                    <div class="balance-card__content-line"></div>
+
+                    <div class="balance-card__content-summary"> <!-- Seção de resumo do saldo -->
+                        <div class="balance-card__content-item">
+                            <p>SALDO TOTAL</p> <!-- Texto informando que é o saldo total -->
+                            <p>R$ 1000,00</p> <!-- Valor total somado de todos os saldos -->
+                        </div>
+                        <div class="balance-card__content-item">
+                            <p>LIVRE PARA MOVIMENTAÇÃO</p> <!-- Saldo disponível para transações -->
+                            <p>R$ 1000,00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cartão de crédito -->
+        <div class="item">
+            <div class="credit-card"> <!-- Estrutura reservada para um cartão de crédito -->
+            </div>
+        </div>
+
+        <!-- Cartão de débito -->
+        <div class="item">
+            <div class="debit-card"> <!-- Estrutura reservada para um cartão de débito -->
+            </div>
+        </div>
+
+        <!-- Informações do cliente -->
+        <div class="item">
+            <div class="client-infos-card"> <!-- Estrutura reservada para informações do cliente -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
