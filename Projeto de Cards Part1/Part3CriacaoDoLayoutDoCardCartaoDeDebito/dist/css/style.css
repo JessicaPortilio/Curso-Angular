@@ -1,0 +1,176 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+/* Importa a fonte 'Poppins' do Google Fonts.
+    - 'wght@300;500' indica que estamos importando os pesos 300 (leve) e 500 (médio) dessa fonte.
+    - 'display=swap' ajuda a carregar a fonte de maneira mais eficiente, evitando que o texto desapareça temporariamente enquanto a fonte é carregada. */
+* { /* Aplica essas configurações a todos os elementos da página */
+  box-sizing: border-box; /* Garante que a largura e a altura dos elementos incluam as bordas e o preenchimento */
+  margin: 0; /* Remove qualquer margem externa padrão dos elementos */
+  padding: 0; /* Remove qualquer espaçamento interno padrão dos elementos */
+}
+
+body { /* Define os estilos para o corpo (fundo) da página */
+  background-color: darkgrey; /* Define a cor de fundo da página como cinza escuro */
+  font-family: "Poppins", sans-serif; /* Define a fonte do texto como 'Poppins'. Se essa fonte não estiver disponível, usa qualquer fonte sem serifa */
+}
+
+/* Importa um arquivo chamado "reset.scss" que provavelmente contém um reset de estilos.
+    - Esse arquivo serve para garantir que todos os navegadores comecem a exibir os estilos de forma mais uniforme, eliminando estilos padrão diferentes entre eles. */
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .item {
+  width: 50%;
+  padding: 10px;
+}
+
+/* Importa o arquivo "container.scss", que provavelmente contém estilos relacionados à estrutura principal da página,
+    como largura máxima, margens e alinhamento do conteúdo. */
+.balance-card { /* Define o estilo do cartão de saldo */
+  border: none; /* Remove qualquer borda ao redor do cartão */
+  overflow: hidden; /* Garante que nenhum conteúdo extra ultrapasse os limites do cartão */
+  border-radius: 5px; /* Arredonda os cantos do cartão */
+  background-color: white; /* Define o fundo do cartão como branco */
+}
+.balance-card__header { /* Estiliza a parte superior do cartão (cabeçalho) */
+  padding: 15px; /* Adiciona espaçamento interno de 15px */
+  background-color: rgb(233, 129, 50); /* Define a cor de fundo do cabeçalho como laranja */
+  display: flex; /* Usa flexbox para alinhar os itens do cabeçalho */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+.balance-card__header p {
+  font-size: 20px; /* Define o tamanho da fonte para 20px */
+}
+.balance-card__header-title { /* Define o estilo da área do título no cabeçalho */
+  display: flex; /* Utiliza flexbox para alinhar os elementos */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  margin-right: auto; /* Empurra os itens para a esquerda */
+}
+.balance-card__header-title h1 {
+  font-size: 20px; /* Define o tamanho da fonte do título */
+}
+.balance-card__header-icon { /* Define o estilo do ícone ao lado do título */
+  width: 40px; /* Define a largura do ícone como 40px */
+  margin-right: 10px; /* Adiciona um espaçamento entre o ícone e o texto */
+}
+.balance-card__content { /* Define o estilo do corpo do cartão */
+  padding: 15px; /* Adiciona espaçamento interno de 15px */
+  overflow: hidden; /* Evita que o conteúdo ultrapasse os limites do cartão */
+  border-bottom-left-radius: 5px; /* Arredonda o canto inferior esquerdo */
+  border-bottom-right-radius: 5px; /* Arredonda o canto inferior direito */
+  background-color: white; /* Define o fundo do conteúdo como branco */
+}
+.balance-card__content-item { /* Define o estilo dos itens dentro do conteúdo do cartão */
+  display: flex; /* Usa flexbox para alinhar os elementos horizontalmente */
+  align-items: center; /* Alinha os elementos verticalmente ao centro */
+  padding: 20px; /* Adiciona espaçamento interno de 20px */
+}
+.balance-card__content-item p:nth-of-type(1) { /* Estiliza o primeiro parágrafo dentro do item */
+  margin-right: auto; /* Empurra o primeiro parágrafo para a esquerda */
+}
+.balance-card__content-line { /* Define o estilo das linhas divisórias entre os itens */
+  border: 0.5px solid #9e9e9e; /* Cria uma linha cinza clara com 0.5px de espessura */
+}
+.balance-card__content-summary { /* Estiliza a seção de resumo do saldo */
+  margin-top: 30px; /* Adiciona um espaçamento superior de 30px */
+  border-radius: 5px; /* Arredonda os cantos do resumo */
+  background-color: rgba(0, 0, 0, 0.1); /* Define um fundo semitransparente */
+  padding: 0px 12px; /* Adiciona espaçamento interno de 12px nas laterais */
+}
+
+/* Importa o arquivo "balance-card.scss", que provavelmente contém os estilos do cartão de saldo, 
+    definindo cores, espaçamentos e organização visual dos elementos desse cartão. */
+.credit-card { /* Define os estilos para um cartão de crédito */
+  border: none; /* Remove qualquer borda ao redor do cartão */
+  overflow: hidden; /* Garante que nenhum conteúdo extra ultrapasse os limites do cartão */
+  border-radius: 5px; /* Arredonda os cantos do cartão */
+  background-color: white; /* Define o fundo do cartão como branco */
+}
+.credit-card__header { /* Estiliza a parte superior do cartão (cabeçalho) */
+  padding: 15px; /* Adiciona espaçamento interno de 15px */
+  background-color: rgb(233, 129, 50); /* Define a cor de fundo do cabeçalho como laranja */
+}
+.credit-card__header-title { /* Define o estilo da área do título no cabeçalho */
+  display: flex; /* Utiliza flexbox para alinhar os elementos */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  margin-right: auto; /* Empurra os itens para a esquerda */
+}
+.credit-card__header-title h1 {
+  font-size: 20px; /* Define o tamanho da fonte do título */
+}
+.credit-card__header-icon { /* Define o estilo do ícone ao lado do título */
+  width: 40px; /* Define a largura do ícone como 40px */
+  margin-right: 10px; /* Adiciona um espaçamento entre o ícone e o texto */
+}
+.credit-card__content { /* Define o estilo do corpo do cartão */
+  padding: 15px; /* Adiciona espaçamento interno de 15px */
+  overflow: hidden; /* Evita que o conteúdo ultrapasse os limites do cartão */
+  border-bottom-left-radius: 5px; /* Arredonda o canto inferior esquerdo */
+  border-bottom-right-radius: 5px; /* Arredonda o canto inferior direito */
+  background-color: white; /* Define o fundo do conteúdo como branco */
+}
+.credit-card__content-item { /* Define o estilo dos itens dentro do conteúdo do cartão */
+  display: flex; /* Usa flexbox para alinhar os elementos horizontalmente */
+  align-items: center; /* Alinha os elementos verticalmente ao centro */
+  padding: 20px; /* Adiciona espaçamento interno de 20px */
+}
+.credit-card__content-item p:nth-of-type(1) { /* Estiliza o primeiro parágrafo dentro do item */
+  margin-right: auto; /* Empurra o primeiro parágrafo para a esquerda */
+}
+.credit-card__content-line { /* Define o estilo das linhas divisórias entre os itens */
+  border: 0.5px solid #9e9e9e; /* Cria uma linha cinza clara com 0.5px de espessura */
+}
+
+/* Importa o arquivo "credit-card.scss", que deve conter os estilos do cartão de crédito.
+    Isso pode incluir formatação para exibição do número do cartão, nome do titular e tipo do cartão. */
+.debit-card { /* Define o estilo para a classe "debit-card", que representa o cartão de débito */
+  border: none; /* Remove qualquer borda ao redor do cartão */
+  overflow: hidden; /* Garante que nenhum conteúdo extra ultrapasse os limites do cartão */
+  border-radius: 5px; /* Arredonda os cantos do cartão */
+  background-color: white; /* Define o fundo do cartão como branco */
+}
+.debit-card__header { /* Estiliza a parte superior do cartão (cabeçalho) */
+  padding: 15px; /* Adiciona espaçamento interno de 15px */
+  background-color: rgb(233, 129, 50); /* Define a cor de fundo do cabeçalho como laranja */
+}
+.debit-card__header-title { /* Define o estilo da área do título no cabeçalho */
+  display: flex; /* Utiliza flexbox para alinhar os elementos */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  margin-right: auto; /* Empurra os itens para a esquerda */
+}
+.debit-card__header-title h1 {
+  font-size: 20px; /* Define o tamanho da fonte do título */
+}
+.debit-card__header-icon { /* Define o estilo do ícone ao lado do título */
+  width: 40px; /* Define a largura do ícone como 40px */
+  margin-right: 10px; /* Adiciona um espaçamento entre o ícone e o texto */
+}
+.debit-card__content { /* Define o estilo do corpo do cartão */
+  padding: 15px; /* Adiciona espaçamento interno de 15px */
+  overflow: hidden; /* Evita que o conteúdo ultrapasse os limites do cartão */
+  border-bottom-left-radius: 5px; /* Arredonda o canto inferior esquerdo */
+  border-bottom-right-radius: 5px; /* Arredonda o canto inferior direito */
+  background-color: white; /* Define o fundo do conteúdo como branco */
+}
+.debit-card__content-item { /* Define o estilo dos itens dentro do conteúdo do cartão */
+  display: flex; /* Usa flexbox para alinhar os elementos horizontalmente */
+  align-items: center; /* Alinha os elementos verticalmente ao centro */
+  padding: 20px; /* Adiciona espaçamento interno de 20px */
+}
+.debit-card__content-item p:nth-of-type(1) { /* Estiliza o primeiro parágrafo dentro do item */
+  margin-right: auto; /* Empurra o primeiro parágrafo para a esquerda */
+}
+
+/* Importa o arquivo "debit-card.scss", que deve conter os estilos do cartão de débito.
+    Assim como no cartão de crédito, pode incluir detalhes como formatação do número do cartão, 
+    nome do titular e outras informações específicas desse tipo de cartão. */
+.client-infos-card { /* Define os estilos para um cartão de informações do cliente */ }
+
+/* Importa o arquivo "client-infos-card.scss", que provavelmente contém os estilos do cartão de informações do cliente,
+    incluindo detalhes como nome do cliente, saldo e outras informações relevantes. */
+
+/*# sourceMappingURL=style.css.map */
