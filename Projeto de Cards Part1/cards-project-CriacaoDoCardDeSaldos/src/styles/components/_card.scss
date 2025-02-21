@@ -1,0 +1,20 @@
+.ca-c-card {
+    border: none; /* Remove qualquer borda ao redor do cartão */
+    overflow: hidden; /* Garante que nenhum conteúdo extra ultrapasse os limites do cartão */
+    border-radius: 5px; /* Arredonda os cantos do cartão */
+    background-color: white; /* Define o fundo do cartão como branco */
+
+
+    &__header { /* Estiliza a parte superior do cartão (cabeçalho) */
+        padding: 15px; /* Adiciona espaçamento interno de 15px */
+        background-color: rgb(233,129,50); /* Define a cor de fundo do cabeçalho como laranja */
+    }
+
+    &__content { /* Define o estilo do corpo do cartão */
+        padding: 15px; /* Adiciona espaçamento interno de 15px */
+        overflow: hidden; /* Evita que o conteúdo ultrapasse os limites do cartão */
+        border-bottom-left-radius: 5px; /* Arredonda o canto inferior esquerdo */
+        border-bottom-right-radius: 5px; /* Arredonda o canto inferior direito */
+        background-color: white; /* Define o fundo do conteúdo como branco */
+    }
+}
