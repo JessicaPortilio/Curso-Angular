@@ -1,0 +1,16 @@
+- Questionamento:
+	1 - Os headers dos cards eram variados. Isso dificultava a criação de um único componente de Cards
+	- Se eu criasse um componente de card, eu passaria o tipo do header via @Input?
+		- Essa abordagem seria ruim caso eu tivesse várias estruturas de header diferentes?
+		- Além disso, o componete de Card ficaria muito complexo e com muitas lógicas.
+
+	2 - Valreia a pena criar um componente de Card para cada estrutura diferente?
+	- Mas e se os Cards possuíssem apenas uma pequena diferença?
+	
+- Solução:
+	- Criar um estilo CSS global para a estrutura base do Card (header e contente)
+	- Cada componente que precisasse do Card, precisaria utilizar essa classe global
+	- O conteúdo do header e do contente do Card (css e html) seria implementado pelo próprio componente 
+
+_ Implicações dessa solução:
+	- Já que cada componente vai implementar o conteúdo interno do card, o estilo e o html desses conteúdos acabariam sendo duplicados entre esses componentes
