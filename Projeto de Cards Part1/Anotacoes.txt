@@ -1,0 +1,7 @@
+Porque eu estou fazendo o card dessa forma?
+Qual cenário que eu quero cobrir fazendo assim?
+Que tipo de comportamento e quero evitar fazendo dessa forma?
+Como vai ser a utilização desse componente?
+Eu estou tendo dificuldades nesse ponto...
+Eu acredito que fica bom fazendo dessa forma...
+E quando esse projeto crescer, essa estrutura vai ser adequada?
