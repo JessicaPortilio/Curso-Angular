@@ -1,0 +1,13 @@
+.container { // Estilo para o contêiner principal 
+    width: 100%; // Define a largura do contêiner para 100% da tela 
+    height: 100%; // Define a altura do contêiner para 100% da tela 
+    padding: 10px; // Adiciona 10px de espaço ao redor do contêiner 
+    
+    display: flex; // Usa o Flexbox para organizar os itens dentro do contêiner 
+    flex-wrap: wrap; // Permite que os itens se ajustem em várias linhas quando necessário 
+
+    .item { // Estilo para cada item individual dentro do contêiner 
+        width: 50%; // Define que cada item ocupará metade da largura do contêiner 
+        padding: 10px; // Adiciona 10px de espaço ao redor de cada item 
+    }
+}
