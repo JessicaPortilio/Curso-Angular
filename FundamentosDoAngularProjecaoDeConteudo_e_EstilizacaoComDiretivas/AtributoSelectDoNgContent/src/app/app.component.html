@@ -1,0 +1,44 @@
+<!-- Agora vamos ver como o <app-card> pode ser usado com diferentes conteúdos. -->
+<!-- Aqui estamos utilizando o componente <app-card>. -->
+<!-- <app-card> -->
+
+  <!-- Este parágrafo tem a classe "texto", então será projetado no primeiro <ng-content> -->
+  <!-- <p class="texto">Sou um conteúdo</p> -->
+  
+  <!-- Outro parágrafo com a mesma classe "texto", também será projetado no primeiro <ng-content> -->
+  <!-- <p class="texto">Sou outro texto</p> -->
+  
+  <!-- Este parágrafo tem um atributo "attrTeste", então será projetado no terceiro <ng-content> -->
+  <!-- <p attrTeste>Atributo</p> -->
+  
+  <!-- Este botão será projetado no segundo <ng-content> porque é um elemento <button>. -->
+  <!-- <button>Botão</button> -->
+  
+<!-- </app-card> -->
+  
+<!-- O conteúdo será renderizado dentro do cartão, como se estivesse dentro da <div class="card">. -->
+
+<!-- <app-card>
+  <div card-header>
+    Sou o header
+  </div>
+  <div card-content>
+    Sou o content
+  </div>
+  <div card-footer>
+    Sou o footer
+  </div>
+</app-card> -->
+
+
+<!-- Aqui estamos utilizando o componente <app-card>. -->
+  <app-card>
+
+    <!-- O componente <app-comp-texto> será inserido dentro do <ng-content> do card. -->
+    <app-comp-texto></app-comp-texto>
+  
+    <!-- Este botão não será exibido no card porque ele não está selecionado pelo <ng-content>. -->
+    <button>Botão</button>
+  
+  </app-card>
+  
