@@ -1,0 +1,40 @@
+<!-- Este arquivo define o template do componente <app-card>.
+Ele usa o <ng-content> para permitir a inserção de qualquer conteúdo dentro do cartão. -->
+
+<!--  Cria uma <div> com a classe CSS "card", que será estilizada para se parecer com um cartão. -->
+<!-- <div class="card"> -->
+    
+    <!--  O <ng-content> é um espaço reservado para conteúdo dinâmico. -->
+    <!--  Aqui, estamos usando "select='.texto'", o que significa que apenas elementos com a classe "texto" serão projetados neste local. -->
+    <!-- <ng-content select=".texto"></ng-content> -->
+    
+    <!--  Outro <ng-content>, mas agora apenas para elementos <button>. -->
+    <!--  Isso significa que os botões do <app-card> serão inseridos aqui. Estamos utilizando tags. -->
+    <!-- <ng-content select="button"></ng-content> -->
+    
+    <!--  Este <ng-content> seleciona qualquer elemento que tenha o atributo "attrTeste". -->
+    <!--  Apenas elementos com este atributo serão projetados neste local. -->
+    <!-- <ng-content select="[attrTeste]"></ng-content> -->
+    
+<!-- </div> -->
+
+<!-- <div class="card">
+    <ng-content select="[card-header]"></ng-content>
+    <ng-content select="[card-content]"></ng-content>
+    <ng-content select="[card-footer]"></ng-content>
+</div> -->
+
+
+<!-- Criação de uma div com a classe "card" para agrupar o conteúdo dentro de um cartão. -->
+<!-- <div class="card"> -->
+
+    <!-- O <ng-content> é um espaço reservado que permite inserir conteúdo dinâmico. -->
+    <!-- Aqui, o select="app-comp-texto" garante que apenas o componente <app-comp-texto> -->
+    <!-- será projetado dentro do <div class="card">. -->
+    <!-- <ng-content select="app-comp-texto"></ng-content> -->
+
+<!-- </div> -->
+
+<div class="card">
+    <ng-content></ng-content>
+</div>
