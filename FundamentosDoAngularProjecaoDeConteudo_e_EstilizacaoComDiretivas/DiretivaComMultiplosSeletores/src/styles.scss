@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+/* Importa uma fonte personalizada do Google Fonts. Importa a fonte "Poppins" do Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif; /* Define a fonte padrão do site como "Poppins" */
+    background-color: darkgray; /* Define a cor de fundo da página como cinza escuro */
+}
+
+.ca-u-card-text-title {
+    font-weight: 500; /* Define uma espessura média para o texto (um pouco mais grosso) */
+    font-size: 25px; /* Define o tamanho do texto como 25 pixels */
+    display: block; /* Garante que o elemento ocupe toda a largura disponível, forçando quebra de linha */
+}
+
+.ca-u-card-text-subtitle {
+    font-weight: 200; /* Define uma espessura fina para o texto */
+    font-size: 16px; /* Define o tamanho do texto como 16 pixels */
+    display: block; /* Garante que o elemento ocupe toda a largura disponível */
+}
+
+.ca-u-card-text-description {
+    font-weight: 300; /* Define uma espessura leve para o texto */
+    font-size: 28px; /* Define o tamanho do texto como 28 pixels */
+    display: block; /* Garante que o elemento ocupe toda a largura disponível */
+}
+
+.ca-u-card-avatar-small,
+.ca-u-card-avatar-small img{
+    border-radius: 50%; /* Deixa a imagem arredondada */
+    width: 100px; /* Define a largura da imagem como 100 pixels */
+    height: 100px; /* Define a altura da imagem como 100 pixels */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3); /* Define um efeito de sombra*/
+}
+
+.ca-u-card-avatar-large,
+.ca-u-card-avatar-large img {
+    border-radius: 50%; /* Mantém a imagem arredondada */
+    width: 200px; /* Define a largura da imagem como 200 pixels */
+    height: 200px; /* Define a altura da imagem como 200 pixels */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3); /* Define um efeito de sombra*/
+}
