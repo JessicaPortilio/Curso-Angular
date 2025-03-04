@@ -1,0 +1,46 @@
+<div class="card"> <!-- Define um elemento div com a classe "card", que será usado como um container para o conteúdo do cartão -->
+  
+  <!-- Define um título dentro do card com a classe "ca-u-card-text-title" -->
+  <h1 class="ca-u-card-text-title">Sou o título do card</h1>
+
+  <!-- Componente Angular que representa o título do card. Ele será estilizado automaticamente pela diretiva "app-Card-Text-Title" -->
+  <app-Card-Text-Title>Sou o título do card</app-Card-Text-Title>
+
+  <!-- Define um subtítulo dentro do card com a classe "ca-u-card-text-subtitle" -->
+  <h1 class="ca-u-card-text-subtitle">Sou o subtítulo do card</h1>
+
+  <!-- Componente Angular que representa o subtítulo do card. Ele será estilizado automaticamente pela diretiva "app-Card-Text-Subtitle" -->
+  <app-Card-Text-Subtitle>Sou o subtítulo do card</app-Card-Text-Subtitle>
+
+  <!-- Define uma descrição dentro do card com a classe "ca-u-card-text-description" -->
+  <h1 class="ca-u-card-text-description">Sou a descrição do card</h1>
+
+  <!-- Componente Angular que representa a descrição do card. Ele será estilizado automaticamente pela diretiva "app-Card-Text-Description" -->
+  <app-Card-Text-Description>Sou a descrição do card</app-Card-Text-Description>
+
+</div> <!-- Fim do container "card" -->
+
+<!-- No código abaixo, criamos diretivas personalizadas para modificar o estilo de imagens de avatares (fotos de perfil). 
+Temos duas versões: 
+Avatar Pequeno (Small) – Imagem de 100x100 pixels
+Avatar Grande (Large) – Imagem de 200x200 pixels
+A ideia é substituir a necessidade de adicionar classes CSS manualmente e deixar o código mais organizado.
+-->
+
+<!-- Versão antiga: Aplicando a classe CSS diretamente -->
+<!-- <img src="assets/imagens/unicornio.jpg" class="ca-u-card-avatar-small"> -->
+
+<!-- Nova versão: Utilizando uma diretiva personalizada -->
+<!-- Aqui estamos exibindo uma imagem pequena (100x100 pixels) usando uma diretiva personalizada chamada <app-Card-Avatar-Small>. 
+  A diretiva aplicará automaticamente os estilos necessários.
+-->
+<img src="assets/imagens/unicornio.jpg" appCardAvatarSmall>
+
+<!-- Versão antiga: Aplicando a classe CSS diretamente -->
+<!-- <img src="assets/imagens/unicornio.jpg" class="ca-u-card-avatar-large"> -->
+
+<!-- Nova versão: Utilizando uma diretiva personalizada
+  Aqui temos uma imagem maior (200x200 pixels), com a mesma ideia da versão pequena.
+  A diretiva <app-Card-Avatar-Large> aplicará os estilos corretos automaticamente.
+-->
+<app-Card-Avatar-Large><img src="assets/imagens/unicornio.jpg"></app-Card-Avatar-Large>
