@@ -1,0 +1,33 @@
+.container {
+    width: 100%; /* Ocupa toda a largura da tela */
+    display: flex; /* Usa flexbox para organizar os elementos */
+    justify-content: space-around; /* Espaçamento uniforme entre os cartões */
+}
+
+.card {
+    &__header {
+        width: 100%; /* Ocupa toda a largura do cartão */
+        height: 100%; /* Ocupa toda a altura do cabeçalho */
+
+        display: flex; /* Usa flexbox para alinhar o conteúdo */
+        justify-content: center; /* Centraliza os elementos horizontalmente */
+        align-items: center; /* Centraliza os elementos verticalmente */
+
+        &--direction-column {
+            flex-direction: column; /* Muda a disposição dos elementos para coluna */
+        }
+    }
+
+    &__image {
+        width: 150px; /* Define um tamanho fixo para as imagens */
+    }
+
+    &__content {
+        width: 100%; /* Ocupa toda a largura do cartão */
+        height: 100%; /* Ocupa toda a altura do conteúdo */
+        text-align: justify; /* Justifica o texto */
+
+        display: flex; /* Usa flexbox */
+        justify-content: center; /* Centraliza o conteúdo */
+    }
+}
