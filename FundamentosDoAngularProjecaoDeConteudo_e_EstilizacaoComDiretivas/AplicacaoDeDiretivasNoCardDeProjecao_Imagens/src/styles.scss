@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@use "./styles/components/card";
+/* Importa uma fonte personalizada do Google Fonts. Importa a fonte "Poppins" do Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif; /* Define a fonte padrão da página, aplica essa fonte em todo o body do site. */
+    background-color: darkgray; /* Define o fundo do site como cinza escuro */
+}
+

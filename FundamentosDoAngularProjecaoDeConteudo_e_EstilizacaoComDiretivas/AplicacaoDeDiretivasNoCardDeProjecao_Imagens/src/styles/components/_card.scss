@@ -1,0 +1,43 @@
+.ca-c-card { // Define o tamanho máximo do cartão.
+    max-width: 400px; /* Define uma largura máxima para o cartão */
+    
+    &__header { // Define o estilo do cabeçalho
+        padding: 50px; /* Adiciona um espaço interno ao cabeçalho */
+        height: 40%; /* Define que o cabeçalho ocupará 40% da altura do cartão */
+        background-color: #FFAD36; /* Define um fundo laranja claro */
+        display: block;
+    }
+
+    &__content { // Define o estilo do conteúdo
+        padding: 50px; /* Adiciona um espaço interno ao conteúdo */
+        height: 60%; /* Define que o conteúdo ocupará 60% da altura do cartão */
+        background-color: #FF5916; /* Define um fundo laranja escuro */
+        display: block;
+    }
+
+    &__main-text {
+        font-size: 30px;
+        font-weight: 500;
+        display: block;
+    }
+
+    &__sub-text {
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 3px;
+        display: block;
+    }
+
+    &__description-text {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    &__small-image {
+        width: 100px;
+    }
+
+    &__large-image {
+        width: 150px;
+    }
+}
