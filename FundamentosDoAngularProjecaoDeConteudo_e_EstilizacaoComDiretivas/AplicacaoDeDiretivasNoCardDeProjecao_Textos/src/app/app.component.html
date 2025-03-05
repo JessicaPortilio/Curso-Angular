@@ -1,0 +1,51 @@
+<!-- Criamos um div.container para organizar os cartões. -->
+<div class="container">
+  <!-- Cada div.item contém um <app-card>, que usa nosso componente CardComponent. -->
+  <div class="item">
+    <!-- Dentro do <app-card> -->
+    <app-card>
+      <!-- Define a área do cabeçalho do cartão. -->
+      <app-Card-Header>
+        <div class="card__header">
+          <img src="assets/icons/clientes.png" class="card__image" alt="">
+        </div>
+      </app-Card-Header>
+      <app-Card-Content>
+        <div class="card__content">
+          <p appCardDescriptionText>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis dictum lectus, porttitor ultricies metus.
+            Mauris tincidunt mi volutpat, commodo erat sit amet, tempor magna. Vestibulum ante ipsum primis in faucibus
+            orci luctus et ultrices posuere cubilia curae; Donec eget rhoncus lorem, eu ornare lorem. Fusce tincidunt
+            pretium libero sed rutrum. Nunc vel nulla pellentesque, pulvinar odio at, tempus libero. Aenean porttitor
+            risus metus, nec lacinia lacus molestie sed. Aenean in nibh mi. Sed at diam congue, euismod mi eget,
+            facilisis
+            urna. In hac habitasse platea dictumst. Cras in velit orci. Class aptent taciti sociosqu ad litora torquent
+            per conubia nostra, per inceptos himenaeos. Curabitur efficitur interdum sapien. Donec imperdiet, lacus sed
+            viverra dapibus, dolor quam blandit lacus, a luctus felis tortor sit amet enim.
+          </p>
+        </div>
+      </app-Card-Content>
+    </app-card>
+  </div>
+  <div class="item">
+    <app-card>
+      <!--  Define o conteúdo do cartão. -->
+      <app-Card-Header>
+        <div class="card__header card__header--direction-column">
+          <h1 appCardMainText>Fulano da Silva</h1>
+          <img src="assets/icons/clientes.png" class="card__image" alt="">
+          <h3 appCardSubText>Desenvolvedor Front-End</h3>
+        </div>
+      </app-Card-Header>
+      <app-Card-Content>
+        <div class="card__content">
+          <p appCardDescriptionText>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis dictum lectus, porttitor ultricies metus.
+            Mauris tincidunt mi volutpat, commodo erat sit amet, tempor magna. Vestibulum ante ipsum primis in faucibus
+            orci luctus et ultrices posuere cubilia curae; Donec eget rhoncus lorem, eu ornare lorem.
+          </p>
+        </div>
+      </app-Card-Content>
+    </app-card>
+  </div>
+</div>

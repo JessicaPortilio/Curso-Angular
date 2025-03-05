@@ -1,0 +1,15 @@
+<!-- Criamos um div com a classe card, que será o container principal do cartão. -->
+<div class="ca-c-card">
+    <!-- Dentro dele, temos dois blocos -->
+    <!-- .card__header → Representa o cabeçalho do cartão. -->
+    <!-- .card__content → Representa o conteúdo do cartão. -->
+    <!-- Cabeçalho do cartão -->
+    <!-- Aqui será projetado o conteúdo que tiver o atributo "card-header" -->
+    <ng-content select="app-Card-Header"></ng-content>
+
+    <!-- Conteúdo principal do cartão -->
+    <!-- Aqui será projetado o conteúdo que tiver o atributo "card-content" -->
+    <ng-content select="app-Card-Content"></ng-content>
+</div>
+
+<!-- Usamos <ng-content> com select="[card-header]" e select="[card-content]" para projetar o conteúdo que for passado com esses atributos no HTML. -->
