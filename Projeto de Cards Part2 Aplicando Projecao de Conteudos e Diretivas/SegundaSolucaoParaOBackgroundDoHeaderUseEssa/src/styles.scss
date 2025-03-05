@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "./styles/reset/reset";
+@use "./styles/components/card";
+@use "./styles/components/card-item";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+/* Importa a fonte 'Poppins' do Google Fonts.
+    - 'wght@300;500' indica que estamos importando os pesos 300 (leve) e 500 (médio) dessa fonte.
+    - 'display=swap' ajuda a carregar a fonte de maneira mais eficiente, evitando que o texto desapareça temporariamente enquanto a fonte é carregada. */
