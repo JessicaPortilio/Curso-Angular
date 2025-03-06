@@ -1,0 +1,18 @@
+.balance-card { /* Define o estilo do cartão de saldo */
+
+    &__header { /* Estiliza a parte superior do cartão (cabeçalho) */
+        display: flex; /* Usa flexbox para alinhar os itens do cabeçalho */
+        align-items: center; /* Alinha os itens verticalmente ao centro */
+
+        p {
+            margin-left: auto; /* Empurra os itens para a esquerda */
+        }
+    }
+
+    &__content-summary { /* Estiliza a seção de resumo do saldo */
+        margin-top: 30px; /* Adiciona um espaçamento superior de 30px */
+        border-radius: 5px; /* Arredonda os cantos do resumo */
+        background-color: rgba(0,0,0,0.1); /* Define um fundo semitransparente */
+        padding: 0px 12px; /* Adiciona espaçamento interno de 12px nas laterais */
+    }
+}

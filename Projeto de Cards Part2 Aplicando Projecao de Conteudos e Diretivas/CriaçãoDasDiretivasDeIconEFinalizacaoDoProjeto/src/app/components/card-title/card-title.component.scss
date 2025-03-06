@@ -1,0 +1,11 @@
+.card-title {
+    /* Define o estilo da área do título no cabeçalho */
+    display: flex; /* Utiliza flexbox para alinhar os elementos */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+
+    &__icon {/* Define o estilo do ícone ao lado do título */
+        margin-right: 10px; /* Adiciona um espaçamento entre o ícone e o texto */
+    }
+
+
+}

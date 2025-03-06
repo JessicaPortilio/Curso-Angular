@@ -1,0 +1,9 @@
+.ca-c-card-item {
+    display: flex; /* Usa flexbox para alinhar os elementos horizontalmente */
+    align-items: center; /* Alinha os elementos verticalmente ao centro */
+    padding: 20px; /* Adiciona espaçamento interno de 20px */
+
+    p:nth-of-type(1) { /* Estiliza o primeiro parágrafo dentro do item */
+        margin-right: auto; /* Empurra o primeiro parágrafo para a esquerda */
+    }
+}
