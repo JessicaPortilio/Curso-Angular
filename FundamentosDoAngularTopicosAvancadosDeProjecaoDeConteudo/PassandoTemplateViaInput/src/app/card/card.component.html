@@ -1,0 +1,32 @@
+<div class="card">
+    <!-- 
+    Cria uma div com a classe CSS 'card'. Isso é apenas para fins de estilização.
+    -->
+
+    <div class="card-header">
+        <ng-container *ngTemplateOutlet="header"></ng-container>
+        <!-- 
+            Usa o conteúdo do template passado na propriedade 'header' e o insere aqui.
+            O ng-container serve apenas como "estrutura invisível" — ele não adiciona elementos extras no HTML final.
+        -->
+    </div>
+
+    <div class="card-body">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+        <!-- 
+            Aqui será inserido o template de conteúdo principal (content).
+        -->
+    </div>
+
+    <div class="card-footer">
+        <ng-container *ngTemplateOutlet="footer ? footer : defaultFooterTemplate"></ng-container>
+        <!-- 
+            Aqui será inserido o template do rodapé (footer).
+        -->
+        
+        <ng-template #defaultFooterTemplate>
+            Sou o Footer Default
+        </ng-template>
+        
+    </div>
+</div>

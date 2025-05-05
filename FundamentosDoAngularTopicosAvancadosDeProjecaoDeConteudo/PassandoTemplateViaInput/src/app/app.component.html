@@ -1,0 +1,36 @@
+<ng-template #headerTemplate>
+  <p>Sou o Header</p>
+</ng-template>
+<!-- 
+Define um template reutilizável chamado 'headerTemplate'.
+Esse template será passado como conteúdo para o cabeçalho do card.
+-->
+
+
+<ng-template #contentTemplate>
+  <p>Sou o Content</p>
+</ng-template>
+<!-- 
+Define outro template chamado 'contentTemplate'.
+Esse será usado como conteúdo principal (corpo) do card.
+-->
+
+<ng-template #footerTemplate>
+  <p>Sou o Footer</p>
+</ng-template>
+<!-- 
+Define o último template chamado 'footerTemplate'.
+Será usado como rodapé (footer) do card.
+-->
+
+<app-card 
+  [header]="headerTemplate"
+  [content]="contentTemplate"
+  [footer]="footerTemplate"
+></app-card>
+<!-- 
+Usa o componente <app-card> e envia os três templates como entradas:
+- headerTemplate vai para o cabeçalho
+- contentTemplate para o conteúdo
+- footerTemplate para o rodapé
+-->
