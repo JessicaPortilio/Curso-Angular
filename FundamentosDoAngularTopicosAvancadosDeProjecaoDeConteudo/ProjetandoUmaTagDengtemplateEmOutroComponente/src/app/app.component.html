@@ -1,0 +1,19 @@
+<app-card>
+  <!-- 
+  Usa o componente personalizado chamado <app-card>. 
+  O que estiver dentro dele será projetado para dentro do card usando ng-template.
+  -->
+
+  <ng-template #meuTemplate>
+    <!-- 
+    Define um bloco de conteúdo reutilizável chamado "meuTemplate".
+    Ele será capturado automaticamente pelo componente <app-card> com o decorador @ContentChild.
+    -->
+
+    <app-meu-comp></app-meu-comp>
+    <!-- 
+    Usa um componente personalizado chamado <app-meu-comp>.
+    Ele será exibido dentro do template.
+    -->
+  </ng-template>
+</app-card>
