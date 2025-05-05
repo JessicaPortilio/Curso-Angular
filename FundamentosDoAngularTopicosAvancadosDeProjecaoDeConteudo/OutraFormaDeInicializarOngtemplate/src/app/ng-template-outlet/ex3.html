@@ -1,0 +1,23 @@
+Ex3
+<br><br>
+
+<ng-container *ngIf="condition; else elseTemplate" [ngTemplateOutlet]="meuTemplate"></ng-container>
+
+
+<ng-template #meuTemplate>
+    <!-- Define um template reutilizável e atribui a ele o identificador `#meuTemplate`. -->
+
+    Template:
+    <!-- Exibe a palavra "Template:" na tela. -->
+
+    <app-meu-comp></app-meu-comp>
+    <!-- Insere o componente `MeuCompComponent`, que foi criado anteriormente. -->
+</ng-template>
+
+<ng-template #elseTemplate>
+    <!-- Define um segundo template com o identificador `#elseTemplate`.
+    Este template será renderizado caso a variável `condition` seja `false`. -->
+
+    Sou o Else Template
+    <!-- Exibe o texto "Sou o Else Template" na tela caso a condição no `ngIf` seja falsa. -->
+</ng-template>

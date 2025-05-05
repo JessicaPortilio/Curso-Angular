@@ -1,0 +1,38 @@
+Ex 1:
+
+<br>
+
+<!-- Cria um bloco de conteúdo que será exibido apenas se a condição for verdadeira -->
+<!-- 
+Aqui usamos a estrutura ngIf diretamente em um ng-template.
+Se a variável condition for true, o conteúdo dentro deste bloco será exibido.
+Se for false, ele usará o conteúdo do template alternativo chamado elseTemplate.
+-->
+<ng-template [ngIf]="condition" [ngIfElse]="elseTemplate">
+    <!-- Este é um texto simples que será exibido na tela se a condition for verdadeira.
+        Serve para indicar que este é o conteúdo do "template principal".
+    -->
+    Template:
+
+    <!-- 
+        Esta linha renderiza o componente chamado app-meu-comp, 
+        que foi criado separadamente.
+        O conteúdo desse componente (como um título ou parágrafo)
+        será exibido aqui.
+        Nesse caso: <p>meu-comp works!</p> 
+    -->
+    <app-meu-comp></app-meu-comp>
+</ng-template>
+
+<!-- 
+    Aqui criamos outro template, que é o conteúdo alternativo, ou seja, 
+    o que será exibido se condition for false.
+    Damos a ele o nome elseTemplate, que foi referenciado lá em cima no [ngIfElse].
+-->
+<ng-template #elseTemplate>
+    <!-- 
+        Este é um texto que será exibido caso a variável condition seja falsa.
+        Serve como mensagem alternativa ao conteúdo do template principal.
+    -->
+    Sou o Else Template
+</ng-template>

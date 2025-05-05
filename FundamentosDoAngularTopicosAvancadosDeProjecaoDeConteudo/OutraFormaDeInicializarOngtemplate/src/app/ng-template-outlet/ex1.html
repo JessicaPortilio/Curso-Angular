@@ -1,0 +1,21 @@
+<!-- Aqui estamos utilizando ng-container e ng-template para renderizar dinamicamente um template.
+-->
+Ex1
+<br>
+<br>
+<!-- Adiciona dois quebras de linha (<br>) para dar espaço na página -->
+
+<ng-container *ngTemplateOutlet="meuTemplate"></ng-container>
+<!-- O `ng-container` é um contêiner virtual usado para renderizar o conteúdo do template definido abaixo.
+    O Angular usa a diretiva `*ngTemplateOutlet` para inserir o conteúdo do template identificado como "meuTemplate". -->
+
+<ng-template #meuTemplate>
+<!-- Define um template reutilizável e atribui a ele o identificador "#meuTemplate". -->
+
+    Template:
+    <!-- Exibe a palavra "Template:" na tela. -->
+
+    <app-meu-comp></app-meu-comp>
+    <!-- Insere o componente `MeuCompComponent`, que foi criado anteriormente. -->
+</ng-template>
+
