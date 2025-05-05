@@ -1,0 +1,36 @@
+<div class="card">
+    <!-- 
+    Cria uma `div` com a classe "card", que pode ser estilizada via CSS.
+    -->
+
+    <!-- <ng-content></ng-content> -->
+    <!-- 
+    Este código foi comentado, mas se estivesse ativo, ele serviria para inserir diretamente qualquer 
+    conteúdo que estivesse entre as tags <app-card>...</app-card>.
+    No entanto, neste exemplo estamos usando @ContentChild com <ng-template>, 
+        por isso ele está comentado.
+    -->
+
+    <!-- <ng-container *ngTemplateOutlet="content"></ng-container> -->
+    <!-- 
+    Renderiza dinamicamente o template que foi capturado pelo @ContentChild usando a diretiva 
+    ngTemplateOutlet.
+    Isso permite mostrar o conteúdo que foi passado no ng-template do componente pai (app.component).
+    -->
+
+    <!-- Ex1 -->
+    <!-- <ng-container *ngIf="condition; else elseTemplate">
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+
+    </ng-container>
+    <ng-template #elseTemplate>Nenhum conteúdo para ser projetado</ng-template> -->
+    
+
+    <!-- Ex2 -->
+    <!-- <ng-container *ngIf="condition; else elseTemplate" [ngTemplateOutlet]="content"></ng-container>
+    
+    <ng-template #elseTemplate>Nenhum conteúdo para ser projetado</ng-template> -->
+
+    <ng-container *ngTemplateOutlet="condition ? content : null"></ng-container>
+    
+</div>
