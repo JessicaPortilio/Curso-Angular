@@ -1,0 +1,34 @@
+Ex2:
+<!-- Exibe um título "Ex2:" na página para indicar o exemplo que estamos testando. -->
+
+<br><br>
+<!-- Adiciona dois quebras de linha (<br>) para criar um espaçamento entre os elementos da página. -->
+
+<ng-container *ngIf="condition; else elseTemplate">
+<!-- O `ng-container` é um elemento estrutural do Angular que não gera um elemento HTML visível na página.
+    Ele está usando a diretiva `*ngIf` para verificar o valor da variável `condition`.
+    Se `condition` for `true`, o conteúdo dentro deste `ng-container` será exibido.
+    Caso `condition` seja `false`, o Angular renderiza o conteúdo do template identificado como `elseTemplate`. -->
+
+    <ng-container *ngTemplateOutlet="meuTemplate"></ng-container>
+    <!-- Se `condition` for `true`, este `ng-container` renderiza o conteúdo do template chamado `meuTemplate`.
+    Ele usa a diretiva `*ngTemplateOutlet` para buscar o template e renderizá-lo dinamicamente. -->
+</ng-container>
+
+<ng-template #meuTemplate>
+    <!-- Define um template reutilizável e atribui a ele o identificador `#meuTemplate`. -->
+
+    Template:
+    <!-- Exibe a palavra "Template:" na tela. -->
+
+    <app-meu-comp></app-meu-comp>
+    <!-- Insere o componente `MeuCompComponent`, que foi criado anteriormente. -->
+</ng-template>
+
+<ng-template #elseTemplate>
+    <!-- Define um segundo template com o identificador `#elseTemplate`.
+    Este template será renderizado caso a variável `condition` seja `false`. -->
+
+    Sou o Else Template
+    <!-- Exibe o texto "Sou o Else Template" na tela caso a condição no `ngIf` seja falsa. -->
+</ng-template>
