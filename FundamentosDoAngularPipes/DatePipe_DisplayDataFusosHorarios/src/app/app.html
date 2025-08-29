@@ -1,0 +1,57 @@
+<!--
+    Título/descritivo: informamos que estamos mostrando datas no formato ISO 8601.
+    (ISO 8601 é um padrão de formato de data como '2026-08-26T16:20:00.000Z')
+-->
+<h1>Formato ISO8601:</h1>
+
+<!--
+    Aqui usamos o "date pipe" do Angular para formatar a string de data.
+    - minhaData é uma string ISO (terminada em Z → UTC).
+    - | date : 'full' -> pede ao Angular que formate a data no formato "completo" (data + hora completa).
+    - Quando NÃO passamos o parâmetro timezone, o Angular usa o fuso horário do navegador do usuário.
+    Portanto, a string UTC será convertida para o horário local antes de formatar.
+-->
+<b>Data convertida para região:</b>{{ minhaData | date : 'full' }}
+
+<br><br>
+
+<!--
+    Ao adicionar o terceiro argumento (timezone) no date pipe, podemos forçar uma zona.
+    - '+0000' força a saída para UTC (UTC+0).
+    - Exemplo: {{ minhaData | date : 'full' : '+0000' }} vai mostrar a hora tal como em UTC (sem converter para o fuso local).
+-->
+<b>Data UTC-0:</b>{{ minhaData | date : 'full' : '+0000' }}
+
+<h1>Formato TimeStamp</h1>
+
+<!--
+    Quando passamos um número (ex.: 1787761200000) para o date pipe,
+    o Angular interpreta esse número como um timestamp em MILISSEGUNDOS desde 1970-01-01 UTC.
+    - Se você tem um timestamp em segundos, multiplique por 1000 antes.
+    - Sem timezone informado, o resultado será mostrado no fuso local do navegador.
+-->
+Timestamp para região: {{ 1787761200000 | date : 'full' }}
+<br>
+
+<!--
+    Aqui forçamos a exibição desse mesmo timestamp em UTC (+0000).
+    Nota: 1787761200000 é um número fixo; a data resultante depende desse número.
+-->
+Timestamp UTC-0: {{ 1787761200000 | date : 'full' : '+0000' }}
+
+<br>
+<h1>Formato Data Obj</h1>
+
+<!--
+    Se fornecemos um objeto Date (minhaDataObj), o date pipe formata esse Date diretamente.
+    - Sem timezone informado, mostra em fuso local.
+-->
+<b>Data convertida para região:</b> {{ minhaDataObj | date : 'full' }}
+<br>
+
+<!--
+    Forçando UTC ao formatar o Date:
+    - o pipe aceita Date/number/string; aqui usamos uma Date.
+    - Com '+0000' pedimos para mostrar a data/hora em UTC (sem ajuste para fuso local).
+-->
+<b>Data UTC-0:</b> {{ minhaDataObj | date : 'full' : '+0000' }}
