@@ -1,5 +1,30 @@
-{{ pessoa.nome | uppercase}}
+<!--
+  {{ ... }} é "interpolação": serve para mostrar valores do componente na tela.
+  "pipes" (o símbolo |) são "filtros" que transformam o valor ANTES de exibi-lo.
+  Eles não mudam o dado original na classe; apenas formatam o que é mostrado na tela.
+-->
+
+<!--
+  Aqui pegamos o texto pessoa.nome (que é "Jessica") e passamos pelo pipe "uppercase".
+  O pipe uppercase transforma o texto em MAIÚSCULAS. Resultado exibido: "JESSICA".
+-->
+{{ pessoa.nome | uppercase }}
+
 <br>
-{{ pessoa | json}}
+
+<!--
+  O pipe "json" transforma um objeto JavaScript em uma string JSON legível.
+  Útil para debug/visualização de dados na tela.
+  Exemplo de saída: { "nome": "Jessica", "idade": 26 }
+-->
+{{ pessoa | json }}
+
 <br>
-{{ pessoa | json | uppercase}}
+
+<!--
+  Aqui fazemos "encadeamento de pipes": primeiro aplicamos "json" e DEPOIS "uppercase".
+  A ordem importa: o Angular primeiro converte o objeto em JSON (texto),
+  e depois transforma esse texto todo em maiúsculas.
+  Observação: isso é só para exibição; não muda o objeto de verdade.
+-->
+{{ pessoa | json | uppercase }}
