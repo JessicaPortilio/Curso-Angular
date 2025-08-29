@@ -1,0 +1,32 @@
+<!--
+    Pipe "slice" aplicado a uma string:
+    - Sintaxe: slice : start : end
+    - start é a posição inicial (inclusiva) — o primeiro caractere tem índice 0.
+    - end é a posição final (exclusiva). Se omitido, vai até o fim da string.
+    - 'Olá Mundo' | slice : 0 : 3 -> pega caracteres de índice 0,1,2 -> 'Olá'
+-->
+<h1>{{ 'Olá Mundo' | slice : 0 : 3 }}</h1>
+
+<!--
+    Se só passamos o início (4), ele pega do índice 4 até o fim:
+    - Índices: O(0) l(1) á(2)  (3) M(4) u(5) n(6) d(7) o(8)
+    - slice : 4 -> a partir do 'M' -> 'Mundo'
+-->
+<h1>{{ 'Olá Mundo' | slice : 4 }}</h1>
+
+<!--
+    slice funciona também com arrays:
+    - [1,2,3,4,5] | slice : 0 : 3 -> pega elementos índices 0,1,2 -> [1,2,3]
+    - Note que quando usado em interpolação direta (sem json), arrays serão convertidos para string de forma simples.
+-->
+<h1>{{ [1, 2, 3, 4, 5] | slice : 0 : 3 }}</h1>
+
+<!--
+    Exemplo prático com *ngFor e slice:
+    - Aqui usamos o pipe slice para limitar quais elementos serão iterados no *ngFor.
+    - [1,2,3,4,5] | slice : 0 : 2 -> resulta em [1,2]
+    - *ngFor vai repetir o <h1> para cada item do array resultante.
+-->
+<h1 *ngFor=" let n of [1, 2, 3, 4, 5] | slice : 0 : 2">
+    {{ n }}
+</h1>

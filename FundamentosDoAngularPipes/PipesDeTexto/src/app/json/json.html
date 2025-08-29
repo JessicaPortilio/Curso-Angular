@@ -1,0 +1,14 @@
+<!--
+    Aqui estamos tentando interpolar um objeto sem usar pipe:
+    - {{ {nome: 'Jessica', idade: 30} }}
+    Angular tenta transformar o objeto em string e o resultado será algo como "[object Object]".
+    Não é legível.
+-->
+<h1>{{ {nome: 'Jessica', idade: 30} }}</h1>
+<!--
+    Usando o pipe "json":
+    - Esse pipe transforma um objeto/array em uma string JSON legível.
+    - Ex.: {"nome":"Jessica","idade":30}
+    - Útil para debug ou para visualizar dados complexos no template.
+-->
+<h1>{{ {nome: 'Jessica', idade: 30} | json }}</h1>
