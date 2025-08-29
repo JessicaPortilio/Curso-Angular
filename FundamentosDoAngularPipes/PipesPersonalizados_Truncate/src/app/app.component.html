@@ -1,0 +1,11 @@
+<!--
+    Aqui exibimos o nome do usuário aplicando dois pipes em sequência:
+    1) trancate : 3  -> corta o texto para 3 caracteres (se necessário) e adiciona '...'
+    2) uppercase     -> transforma o resultado em MAIÚSCULAS
+    Ordem: o Angular aplica da esquerda para a direita.
+-->
+Nome do Usuário: <b>{{ pessoa.nome | trancate : 3 | uppercase }}</b>
+<br>
+
+<!-- Usa o pipe userStatus para transformar o número do status em texto legível (ex.: 1 -> "Ativo") -->
+Status do Usuário: <b>{{ pessoa.status | userStatus }}</b>
