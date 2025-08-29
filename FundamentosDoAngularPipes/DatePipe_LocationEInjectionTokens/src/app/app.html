@@ -1,0 +1,16 @@
+<!-- Exemplo 1: usa o pipe 'date' sem nenhum argumento -->
+<!-- Como definimos DATE_PIPE_DEFAULT_OPTIONS, o formato padrão é: 'Data: dd/MM/y' e timezone '+0000' -->
+{{ '2026-08-26T16:20:00.000Z' | date }}
+<br>
+
+<!-- Exemplo 2: usando formato 'full' -->
+<!-- 'full' exibe dia da semana, dia, mês, ano, hora completa e timezone -->
+{{ '2026-08-26T16:20:00.000Z' | date : 'full' }}
+<br>
+
+<!-- Exemplo 3: usando formato 'full' e forçando o locale pt-BR explicitamente -->
+<!-- 
+  Terceiro argumento: timezone (undefined = usa padrão do pipe)
+  Quarto argumento: locale (pt-BR) -> força nomes de dias e meses em português
+-->
+{{ '2026-08-26T16:20:00.000Z' | date : 'full' : undefined : 'pt-BR' }}
