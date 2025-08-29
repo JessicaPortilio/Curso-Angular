@@ -1,0 +1,116 @@
+<!-- Título da seção -->
+<h1>Formatações:</h1>
+
+<!--
+  Date pipe com formatos predefinidos:
+  - 'short', 'medium', 'long', 'full' são formatos prontos que pedem diferentes níveis de detalhe.
+  - Sem especificar timezone, o Angular usa o fuso horário do navegador
+  - Saída textual exata depende do locale do app/navegador (pt-BR, en-US etc).
+-->
+
+<!-- Curto: data + hora em forma compacta -->
+Curto: {{'2026-08-26T16:20:00.000Z' | date : 'short'}}
+<br>
+
+<!-- Médio: mais informação que 'short' -->
+Médio: {{'2026-08-26T16:20:00.000Z' | date : 'medium'}}
+<br>
+
+<!-- Longo: mês por extenso, fuso, etc (varia por locale) -->
+Longo: {{'2026-08-26T16:20:00.000Z' | date : 'long'}}
+<br>
+
+<!-- Completo: inclui dia da semana, nome do mês, hora completa, fuso (dependendo do locale) -->
+Completo: {{'2026-08-26T16:20:00.000Z' | date : 'full'}}
+
+<br>
+
+<!--
+  Formatação customizada com tokens (texto entre aspas será exibido literalmente).
+  Tokens importantes:
+    - EEEE  => nome completo do dia da semana (ex.: "quarta-feira" ou "Wednesday", conforme locale)
+    - dd    => dia do mês com dois dígitos (ex.: 26)
+    - MMMM  => nome completo do mês (ex.: "agosto" ou "August")
+    - y     => ano (ex.: 2026)
+    - HH    => hora no formato 24h (00-23)
+    - hh    => hora no formato 12h (01-12)
+    - mm    => minutos (00-59)
+    - a     => indicador AM/PM (relevante com 'hh')
+    - zzzz  => nome longo do fuso/representação do timezone (pode exibir "GMT-03:00" ou algo parecido dependendo do ambiente)
+  Observação: as palavras fixas (ex.: 'Hoje é', 'dia', 'de') ficam entre aspas simples.
+-->
+
+<br>
+<b>"Hoje é Wednesday dia 26 de August de 2026":</b>
+<br>
+<!--
+  Exemplo: se o locale do navegador for en-US, o resultado poderá ser:
+    Hoje é Wednesday dia 26 de August de 2026
+  Se o locale for pt-BR, o nome do dia e do mês aparecerão em português:
+    Hoje é quarta-feira dia 26 de agosto de 2026
+-->
+<p>{{'2026-08-26T16:20:00.000Z' | date : "'Hoje é' EEEE 'dia' dd 'de' MMMM 'de' y"}}</p>
+<br>
+
+<b>"Hoje é Wednesday dia 26 de August de 2026 ás 01:20":</b>
+<br>
+<!--
+  Aqui usamos 'hh:mm' (formato 12h). Sem o token 'a' (AM/PM), o contexto fica ambíguo.
+  Exemplo (locale en-US): "Hoje é Wednesday dia 26 de August de 2026 às 01:20 PM"
+  Em pt-BR pode aparecer "01:20" mas é comum preferir 'HH:mm' (24h) em português.
+-->
+<p>{{'2026-08-26T16:20:00.000Z' | date : "'Hoje é' EEEE 'dia' dd 'de' MMMM 'de' y 'às' hh:mm"}}</p>
+<br>
+
+<b>"Hoje é Wednesday dia 26 de August de 2026 ás 01:20  GMT-03:00":</b>
+<br>
+<!--
+  Usando 'zzzz' tentamos mostrar o nome/representação longa do timezone.
+  A aparência exata depende do ambiente/biblioteca do browser.
+  Se o browser estiver em America/Maceio (UTC-3), pode exibir algo com "GMT-03:00".
+-->
+<p>{{'2026-08-26T16:20:00.000Z' | date : "'Hoje é' EEEE 'dia' dd 'de' MMMM 'de' y 'às' hh:mm zzzz"}}</p>
+<br>
+
+<b>"Hoje é Wednesday dia 26 de August de 2026 ás 16:20  GMT+00:00":</b>
+<br>
+<!--
+  Aqui passamos o terceiro argumento do date pipe: o timezone '+0000' (ou 'UTC').
+  Isso força a formatação para UTC, sem conversão para o fuso local.
+  - 'HH:mm' => formato 24 horas (16:20).
+  - Resultado esperado (quando forçado a UTC): "às 16:20 GMT+00:00" (ou similar).
+-->
+<p>{{'2026-08-26T16:20:00.000Z' | date : "'Hoje é' EEEE 'dia' dd 'de' MMMM 'de' y 'às' HH:mm zzzz" : '+0000'}}</p>
+<br>
+
+<b>"Data: 08/26/26 Hora: 01:20 PM</b>
+<br>
+<!--
+  Exemplo de formato misturando tokens numéricos e texto literal:
+  - MM  => mês com dois dígitos (08)
+  - dd  => dia com dois dígitos (26)
+  - yy  => dois dígitos de ano (26)
+  - hh:mm a => hora 12h + AM/PM
+  Importante: esse formato pode aparecer diferente de acordo com o locale do navegador.
+-->
+<p>{{'2026-08-26T16:20:00.000Z' | date : "'Data:' MM'/'dd'/'yy 'Hora:' hh:mm a"}}</p>
+<br>
+
+<!--
+    UTC vs fuso local
+    A string '2026-08-26T16:20:00.000Z' está em UTC (o Z indica UTC).
+    Se seu navegador/usuário estiver em America/Maceio (UTC-3), o horário exibido sem forçar timezone será 13:20 (16:20 - 3h).
+    Se você quiser sempre mostrar em UTC, passe o terceiro argumento do date pipe: ... | date: 'full' : '+0000'.
+-->
+
+<!--
+    Tokens comuns do date pipe
+    EEEE → dia da semana por extenso (ex.: "quarta-feira" ou "Wednesday");
+    dd → dia com dois dígitos;
+    MMMM → mês por extenso;
+    y → ano;
+    HH → hora 24h; hh → hora 12h;
+    mm → minutos; a → AM/PM;
+    zzzz → descrição do timezone (pode variar por navegador/locale).
+-->
+
