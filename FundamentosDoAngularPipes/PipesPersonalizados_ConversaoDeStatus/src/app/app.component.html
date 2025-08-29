@@ -1,0 +1,14 @@
+<!--
+    Aqui exibimos o status do usuário de forma destacada.
+    - {{ pessoa.status | userStatus }}:
+        * pega o número (ex.: 1) vindo do objeto pessoa.status
+        * aplica o pipe userStatus, que transforma 1 em "Ativo" (texto)
+    - <b> ... </b> deixa o texto em negrito para destaque visual.
+-->
+Status do Usuário: <b>{{ pessoa.status | userStatus }}</b>
+
+<!--
+    Exemplo prático:
+    Se pessoa.status for UserStatusEnum.ATIVO (valor 1),
+    o que aparece na tela será: "Status do Usuário: Ativo"
+-->
