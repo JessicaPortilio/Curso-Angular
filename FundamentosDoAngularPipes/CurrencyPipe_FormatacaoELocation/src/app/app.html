@@ -1,0 +1,93 @@
+<!--
+  O pipe "currency" formata valores numéricos como moeda.
+  Assinatura: currency:códigoMoeda:display:digitsInfo:locale
+  - códigoMoeda: 'BRL', 'USD', 'EUR', 'CAD'...
+  - display:
+      'code'          -> mostra o código (BRL, USD, CAD)
+      'symbol'        -> símbolo padrão (R$, US$, CA$, etc — depende do locale)
+      'symbol-narrow' -> símbolo “estreito” (ex.: $). Pode ser igual ao normal se não houver versão estreita.
+      string custom   -> você pode passar um texto qualquer para aparecer como símbolo (ex.: 'Teste')
+      true/false      -> forma antiga:
+                          true  = 'symbol'
+                          false = 'code'
+  - digitsInfo: 'minInt.minFrac-maxFrac' (mín. inteiros, mín. casas decimais – máx. casas decimais)
+  - locale: força o idioma/formatação só nessa chamada (ex.: 'en-US'), ignorando o LOCALE_ID padrão.
+  OBS: Espaço/posição do símbolo, separadores de milhar/decimal e estilo dependem do locale.
+-->
+
+<!-- 1) Apenas código da moeda: usa pt-BR (LOCALE_ID) e BRL (DEFAULT_CURRENCY_CODE se faltasse) -->
+{{ 1200.99 | currency : 'BRL' }}
+<!-- Exemplo típico pt-BR: R$ 1.200,99 -->
+
+<br>
+
+<!-- 2) display = 'code' -> mostra o CÓDIGO da moeda -->
+{{ 1200.99 | currency : 'BRL' : 'code'}}
+<!-- Ex.: BRL 1.200,99 -->
+
+<br>
+
+<!-- 3) display = 'symbol' -> símbolo "normal" da moeda -->
+{{ 1200.99 | currency : 'BRL' : 'symbol'}}
+<!-- Ex.: R$ 1.200,99 -->
+
+<br>
+
+<!-- 4) display = 'symbol-narrow' -> símbolo “estreito”.
+        Para BRL, costuma ser igual ao símbolo normal (R$), pois não há versão mais curta. -->
+{{ 1200.99 | currency : 'BRL' : 'symbol-narrow'}}
+<!-- Ex.: R$ 1.200,99 (igual ao anterior na prática) -->
+
+<br>
+
+<!-- 5) display = 'Teste' -> string custom: substitui o símbolo da moeda pelo texto informado -->
+{{ 1200.99 | currency : 'BRL' : 'Teste'}}
+<!-- Ex.: Teste 1.200,99  (mostra "Teste" no lugar de R$) -->
+
+<br>
+
+<!-- 6) Moeda CAD com símbolo normal -->
+{{ 1200.99 | currency : 'CAD' : 'symbol'}}
+<!-- Em pt-BR costuma aparecer "CA$ 1.200,99" (diferencia de US$) -->
+
+<br>
+
+<!-- 7) CAD com símbolo "narrow" — geralmente só "$", o que pode ser AMBÍGUO -->
+{{ 1200.99 | currency : 'CAD' : 'symbol-narrow'}}
+<!-- Ex.: $ 1.200,99 (igual a outras moedas que também usam "$") -->
+
+<br>
+
+<!-- 8) display = true (forma antiga) -> equivale a 'symbol' -->
+{{ 1200.99 | currency : 'BRL' : true}}
+<!-- Ex.: R$ 1.200,99 -->
+
+<br>
+
+<!-- 9) display = false (forma antiga) -> equivale a 'code' -->
+{{ 1200.99 | currency : 'BRL' : false }}
+<!-- Ex.: BRL 1.200,99 -->
+
+<br>
+
+<!-- 10) digitsInfo = '1.2-2' -> pelo menos 1 dígito inteiro; entre 2 e 2 casas decimais (ou seja, fixa 2) -->
+{{ 1200.99 | currency : 'BRL' : true : '1.2-2'}}
+<!-- Ex.: R$ 1.200,99 (continua com 2 casas) -->
+
+<br>
+
+<!-- 11) Igual ao anterior, mas forçando o locale pt-BR explicitamente (mesmo resultado que o padrão do app) -->
+{{ 1200.99 | currency : 'BRL' : true : '1.2-2' : 'pt-BR'}}
+<!-- Ex.: R$ 1.200,99 -->
+
+<br>
+
+<!-- 12) Agora forçando EN-US: muda separadores e às vezes o símbolo/posição -->
+{{ 1200.99 | currency : 'BRL' : true : '1.2-2' : 'en-US'}}
+<!-- Ex.: R$1,200.99 (milhar com vírgula, decimal com ponto; pode não haver espaço) -->
+
+<br>
+
+<!-- 13) Sem passar nada: usa os PADRÕES globais (LOCALE_ID = 'pt-BR', DEFAULT_CURRENCY_CODE = 'BRL') -->
+{{ 1200.99 | currency }}
+<!-- Ex.: R$ 1.200,99 -->
