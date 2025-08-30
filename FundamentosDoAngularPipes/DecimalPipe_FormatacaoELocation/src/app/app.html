@@ -1,0 +1,139 @@
+<!--
+  Exibe o resultado de 0.1 + 0.2 usando a aritmética de ponto flutuante do JavaScript.
+  IMPORTANTE (explicação simples para leigos):
+  - Números com vírgula (decimais) em JS são armazenados em binário.
+  - Nem todos os decimais são representáveis exatamente (como 0.1, 0.2).
+  - Por isso 0.1 + 0.2 não resulta exatamente 0.3, e sim:
+-->
+{{ 0.1 + 0.2 }}
+<!-- Resultado esperado (no navegador): 0.30000000000000004 -->
+
+<br>
+
+<!--
+  Compara (0.1 + 0.2) === 3 — pergunta se o resultado da soma é igual a 3.
+  É óbvio mas útil para ver que o resultado da soma **não** é 3.
+-->
+{{ 0.1 + 0.2 === 3 }}
+<!-- Resultado esperado: false -->
+
+<br>
+
+<!--
+  Explicação do formato do DecimalPipe / Number pipe:
+  Sintaxe: 'minIntegers.minDecimals-maxDecimals'
+  Ex.: '3.0-2' -> pelo menos 3 algarismos inteiros, entre 0 e 2 casas decimais.
+-->
+
+<!-- 1) Mínimo de inteiros = 3, casas decimais 0 a 2. Locale: 'en-US' -->
+{{ 12.3 | number : '3.0-2' : 'en-US' }}
+<!-- Resultado esperado: "012.3"
+     Por quê: pedimos pelo menos 3 dígitos inteiros; 12 tem 2 dígitos -> é preenchido com zero à esquerda -> "012.3".
+     Em 'en-US' o separador decimal é ponto (.) e não há separador de milhar aqui. -->
+
+<br>
+
+<!-- 2) Mínimo de inteiros = 4, 0-2 decimais, locale en-US (usa vírgula para milhares) -->
+{{ 1234.3 | number : '4.0-2' : 'en-US' }}
+<!-- Resultado esperado: "1,234.3"
+     Por quê: número tem 4 dígitos inteiros (1234) então não precisa de zeros à esquerda;
+     en-US coloca separador de milhar (vírgula) -> "1,234.3". -->
+
+<br>
+
+<!-- 3) minIntegers=3; aqui 1234 tem 4 dígitos então fica igual -->
+{{ 1234.3 | number : '3.0-2' : 'en-US' }}
+<!-- Resultado esperado: "1,234.3" (igual ao anterior) -->
+
+<br>
+
+<!-- 4) minIntegers=0, mínimo de decimais 2, máximo 3 -->
+{{ 12.3 | number : '0.2-3' : 'en-US' }}
+<!-- Resultado esperado: "12.30"
+     Por quê: pedimos pelo menos 2 casas decimais; 12.3 tem 1 casa -> acrescenta um zero -> "12.30". -->
+
+<br>
+
+<!-- 5) exato 3 casas decimais (mínimo 3, máximo 3) -->
+{{ 12.322 | number : '0.3-3' : 'en-US' }}
+<!-- Resultado esperado: "12.322"
+     Por quê: pedimos exatamente 3 casas decimais e o valor já tem 3. -->
+
+<br>
+
+<!-- 6) mínimo 1 casa, máximo 3 casas -->
+{{ 12.322 | number : '0.1-3' : 'en-US' }}
+<!-- Resultado esperado: "12.322" (mantém as 3 casas, dentro do máximo) -->
+
+<br>
+
+<!-- 7) máximo 3 casas -->
+{{ 12.32 | number : '0.0-3' : 'en-US' }}
+<!-- Resultado esperado: "12.32" (tem 2 casas — dentro do intervalo 0..3) -->
+
+<br>
+
+<!-- 8) máximo 2 casas -->
+{{ 12.32 | number : '0.0-2' : 'en-US' }}
+<!-- Resultado esperado: "12.32" (já tem 2 casas) -->
+
+<br>
+
+<!-- 9) máximo 1 casa (arredonda) -->
+{{ 12.34 | number : '0.0-1' : 'en-US' }}
+<!-- Resultado esperado: "12.3"
+     Por quê: pedimos 0..1 casas; 12.34 é arredondado para 12.3 (usa arredondamento "para o mais próximo"). -->
+
+<br>
+
+<!-- 10) 12.35 com máximo 1 casa — comportamento de arredondamento -->
+{{ 12.35 | number : '0.0-1' : 'en-US' }}
+<!-- Resultado esperado (geralmente): "12.4"
+     Observação importante sobre arredondamento:
+     - O DecimalPipe/Intl geralmente arredonda para o valor mais próximo ("to-nearest").
+     - No caso de exatamente um "meio" (por exemplo 12.350000000... exato), o modo de desempate
+       pode depender da implementação (half-up vs half-even), **e** resultados podem ser afetados
+       por pequenas imprecisões binárias (12.35 pode não ser representado exatamente em binário).
+     - Portanto, na prática você verá "12.4" na maioria dos navegadores, mas esteja atento a casos limites. -->
+
+<br>
+
+<!-- 11) arredondando para 2 casas (máx 2) -->
+{{ 12.3677 | number : '0.0-2' : 'en-US' }}
+<!-- Resultado esperado: "12.37" (arredonda 12.3677 → 12.37) -->
+
+<br>
+
+<!-- 12) sem casas decimais (0..0) — arredonda para inteiro -->
+{{ 12.5 | number : '0.0-0' : 'en-US' }}
+<!-- Resultado esperado: "13"
+     Por quê: pedimos 0 casas decimais; 12.5 será arredondado para o inteiro mais próximo (normalmente 13). -->
+
+<br>
+<!--
+  Linha comentada: exemplo que causa erro se usado.
+  O formato '3.5-4' é inválido porque o número mínimo de casas decimais (5) não pode ser maior que o máximo (4).
+  Por isso o Angular lança erro se você usar algo assim.
+-->
+<!-- {{ 12.3 | number : '3.5-4' : 'en-US'}} -->
+
+<br>
+
+<!-- 13) Usando locale pt-BR explicitamente (vírgula decimal e separador de milhar ponto) -->
+{{ 1234.3 | number : undefined : 'pt-BR' }}
+<!-- Resultado esperado: "1.234,3"
+     Por quê: pt-BR usa '.' para milhares e ',' para decimal. Quando o formato (segundo argumento) é undefined,
+     o number pipe usa o formato padrão (normalmente '1.0-3'). -->
+
+<br>
+
+<!-- 14) Usando locale en-US explicitamente -->
+{{ 1234.3 | number : undefined : 'en-US' }}
+<!-- Resultado esperado: "1,234.3" (vírgula para milhar, ponto para decimal) -->
+
+<br>
+
+<!-- 15) Sem argumentos — usa o locale padrão da aplicação (LOCALE_ID definido no componente como 'pt-BR') -->
+{{ 1234.3 | number }}
+<!-- Resultado esperado: "1.234,3"
+     Por quê: você definiu LOCALE_ID: 'pt-BR' no providers do componente, então o pipe number usa pt-BR por padrão. -->
