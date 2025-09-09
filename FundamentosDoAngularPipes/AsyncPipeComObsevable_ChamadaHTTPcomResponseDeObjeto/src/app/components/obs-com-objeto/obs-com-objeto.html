@@ -1,0 +1,29 @@
+<!-- Título explicativo -->
+<h1>Async Pipe com Objeto</h1>
+
+<!-- Seção que mostra dados preenchidos via subscribe manual (this.user) -->
+<h3>Subscribe manual:</h3>
+
+<!-- Quando a página abrir, o código em ngOnInit assinou getUserById(1) e colocou os dados em `user`. -->
+<p>Nome: {{user.name}}</p>
+<p>Nome do Usuário: {{user.username}}</p>
+<p>E-mail: {{user.email}}</p>
+
+<!--
+  Seção que usa o async pipe.
+  - (user$ | async) as meuUser: o async pipe assina automaticamente o Observable user$,
+    aguarda o resultado, e atribui a variável de template `meuUser` para uso dentro do bloco.
+  - Quando o componente/template for destruído, o async pipe cancela a inscrição sozinho.
+-->
+<h3>Subscribe pelo async pipe:</h3>
+
+<div *ngIf="(user$ | async) as meuUser">
+    <p>Nome: {{meuUser.name}}</p>
+    <p>Nome do Usuário: {{meuUser.username}}</p>
+    <p>E-mail: {{meuUser.email}}</p>
+</div>
+
+<!-- Botões que mudam o user$ para buscar outro usuário ao clicar -->
+<button (click)="onBtnClick(1)">1</button>
+<button (click)="onBtnClick(2)">2</button>
+<button (click)="onBtnClick(3)">3</button>
