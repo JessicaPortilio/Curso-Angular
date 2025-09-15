@@ -1,0 +1,27 @@
+<!-- 
+  async pipe funciona tanto com Promise quanto com Observable:
+  - se receber Promise => aguarda resolução e exibe o valor
+  - se receber Observable => inscreve, recebe valores e cancela quando o template some
+-->
+
+<!-- Parte 1: usando a Promise (userPromise) junto com async pipe -->
+<!-- *ngIf="(userPromise | async) as user; else loadingTemplate" -->
+<div *ngIf="(userPromise | async) as user; else loadingTemplate">
+  <!-- Quando a Promise resolver, user estará disponível aqui -->
+  <p>Nome: {{ user.name}}</p>
+  <p>Username: {{ user.username}}</p>
+  <p>E-mail: {{ user.email }}</p>
+</div>
+
+<!-- ng-template que aparece enquanto a Promise está pendente -->
+<ng-template #loadingTemplate>
+  <h1>Carregando...</h1> <!-- Mostra enquanto userPromise não foi resolvida -->
+</ng-template>
+
+<!-- Parte 2: usando a Promise que veio do lastValueFrom(Observable HTTP) -->
+<!-- Note que estamos usando também o async pipe: o async funcionará com a Promise gerada por lastValueFrom -->
+<div *ngIf="(userByIdPromise | async) as userByID">
+  <p>Nome: {{ userByID.name}}</p>
+  <p>Username: {{ userByID.username}}</p>
+  <p>E-mail: {{ userByID.email }}</p>
+</div>
