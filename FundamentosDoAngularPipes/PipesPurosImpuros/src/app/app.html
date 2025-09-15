@@ -1,0 +1,19 @@
+<!-- *ngFor: repete o bloco para cada usuário da lista "users" -->
+<!-- let i = index: disponibiliza a posição atual no array (0, 1, 2, ...) -->
+<div *ngFor="let user of users; let i = index;">
+  <!-- Mostra o nome do usuário -->
+  <p>Nome: {{ user.name }}</p>
+
+  <!-- Aplica o pipe 'status' ao número user.status.
+        - user.status (ex.: 1) é passado para o pipe.
+        - o pipe retorna 'Ativo' ou 'Inativo' que é exibido na tela. -->
+  <p>Status: {{ user.status | status }}</p>
+
+  <!-- Botão que chama inactivateUser(i) passando o índice do usuário.
+        Quando clicado, altera user.status para 2 (Inativo) — a tela é atualizada. -->
+  <button (click)="inactivateUser(i)">Inativar Usuário</button>
+  <hr>
+</div>
+
+<!-- Botão fora do loop que adiciona um novo usuário ao array -->
+<button (click)="addUser()">Adicionar</button>
