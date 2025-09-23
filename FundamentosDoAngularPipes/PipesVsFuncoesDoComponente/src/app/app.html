@@ -1,0 +1,27 @@
+<!-- *ngFor: repete este bloco para CADA usuário do array "users" -->
+<!-- let i = index disponibiliza o índice (0,1,2...) do item atual -->
+<div *ngFor="let user of users; let i = index;">
+  
+  <!-- Mostra o nome do usuário -->
+  <p>Nome: {{ user.name }}</p>
+
+  <!--
+    A forma comentada abaixo usaria o pipe customizado:
+    <p>Status: {{ user.status | status }}</p>
+    Usar um pipe costuma ser mais eficiente e sem efeitos colaterais no template.
+  -->
+
+  <!-- Aqui você está chamando um método da classe para obter o texto do status -->
+  <!-- ATENÇÃO DE PERFORMANCE: -->
+  <!-- Chamar funções no template faz com que a função seja executada repetidamente 
+        durante cada ciclo de detecção de mudanças. Isso pode causar muitos logs
+        (console.log('getUserStatus')) e prejuízo de performance em listas grandes. -->
+  <p>Status: {{ getUserStatus(user.status) }}</p>
+
+  <!-- Botão que inativa o usuário atual (passa o índice i) -->
+  <button (click)="inactivateUser(i)">Inativar Usuário</button>
+  <hr>
+</div>
+
+<!-- Botão que adiciona um novo usuário na lista -->
+<button (click)="addUser()">Adicionar</button>
