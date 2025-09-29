@@ -1,0 +1,36 @@
+<div *ngFor="let user of users; let i = index;">
+  <!-- Mostra o nome do usuário -->
+  <p>Nome: {{ user.name }}</p>
+
+  <!-- Mostra o status textual (pipe 'status' — seu outro pipe) -->
+  <p>Status: {{ user.status | status }}</p>
+
+  <!--
+    Aqui usamos property binding em [src] com um pipe que devolve o caminho da imagem.
+    - O pipe recebe user.status e retorna uma string com o caminho (ex.: "icons/usuario-verificado.png").
+    - O Angular coloca esse valor no atributo src da tag <img>.
+    Observações importantes:
+      * Certifique-se de que o caminho retornado exista no output do build.
+        - Se você tem "public/icons/usuario-verificado.png" e seu angular.json copia "public" para a raiz,
+          o caminho correto pode ser '/icons/usuario-verificado.png' ou 'icons/usuario-verificado.png'
+          (dependendo de como você preferir). Ajuste o mapa no pipe conforme sua configuração de assets.
+      * Se o pipe retornar undefined (status desconhecido), a imagem ficará quebrada (404).
+        Considere retornar um fallback: 'icons/default.png'.
+  -->
+  <img [src]="user.status | userStatusImage" width="100" height="100" alt="Ícone de status do usuário">
+
+  <!--
+    Alternativa (comentada): usar um método do componente em vez de pipe.
+    <img [src]="getUserImage(user.status)" ...>
+    -> Evite chamar métodos do componente no template se eles fizerem trabalho pesado
+        porque são executados muitas vezes durante a detecção de mudanças.
+    -> Pipes são preferíveis para transformação simples e reutilizável.
+  -->
+
+  <!-- Botão que marca o usuário como inativo (chama o método no componente) -->
+  <button (click)="inactivateUser(i)">Inativar Usuário</button>
+  <hr>
+</div>
+
+<!-- Botão para adicionar novo usuário -->
+<button (click)="addUser()">Adicionar</button>
